@@ -1,0 +1,13 @@
+[gd_scene load_steps=3 format=3 uid="uid://c3pjacq1uk8k2"]
+
+[ext_resource type="ArrayMesh" uid="uid://dta0lyk367x2d" path="res://assets/badminton.obj" id="1_of53n"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_of53n"]
+resource_local_to_scene = true
+albedo_color = Color(0, 0, 0, 0)
+emission_enabled = true
+emission_energy_multiplier = 2.25
+
+[node name="MeshInstance3D" type="MeshInstance3D"]
+material_override = SubResource("StandardMaterial3D_of53n")
+mesh = ExtResource("1_of53n")

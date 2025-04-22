@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://bsmc0tvjo11l0"]
+
+[ext_resource type="Script" uid="uid://cig5ksg4jah2l" path="res://counter.gd" id="1_wcxvy"]
+
+[node name="counter" type="Node2D"]
+script = ExtResource("1_wcxvy")

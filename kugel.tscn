@@ -1,0 +1,20 @@
+[gd_scene load_steps=3 format=3 uid="uid://bf05b83umuvdk"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_7281o"]
+resource_local_to_scene = true
+albedo_color = Color(0, 0, 0, 0)
+emission_enabled = true
+emission_energy_multiplier = 2.25
+
+[sub_resource type="CapsuleMesh" id="CapsuleMesh_7281o"]
+resource_local_to_scene = true
+radius = 0.25
+height = 1.0
+radial_segments = 32
+rings = 6
+
+[node name="MeshInstance3D" type="MeshInstance3D"]
+material_override = SubResource("StandardMaterial3D_7281o")
+cast_shadow = 0
+gi_mode = 0
+mesh = SubResource("CapsuleMesh_7281o")

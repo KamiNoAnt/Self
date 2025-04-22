@@ -1,0 +1,13 @@
+[gd_scene load_steps=3 format=3 uid="uid://brwk7568b6yvr"]
+
+[ext_resource type="ArrayMesh" uid="uid://di1wn6aeahcrc" path="res://assets/usb.obj" id="1_joa5w"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_joa5w"]
+resource_local_to_scene = true
+albedo_color = Color(0, 0, 0, 0)
+emission_enabled = true
+emission_energy_multiplier = 2.25
+
+[node name="MeshInstance3D" type="MeshInstance3D"]
+material_override = SubResource("StandardMaterial3D_joa5w")
+mesh = ExtResource("1_joa5w")
