@@ -5,6 +5,8 @@ resource_local_to_scene = true
 albedo_color = Color(0, 0, 0, 0)
 emission_enabled = true
 emission_energy_multiplier = 2.25
+ao_light_affect = 1.0
+disable_receive_shadows = true
 
 [sub_resource type="CapsuleMesh" id="CapsuleMesh_7281o"]
 resource_local_to_scene = true

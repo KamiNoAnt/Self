@@ -21,22 +21,43 @@ sky_material = SubResource("ProceduralSkyMaterial_1w2h5")
 
 [sub_resource type="Environment" id="Environment_l8ouh"]
 background_mode = 1
-background_color = Color(0.402346, 0.36369, 0.744517, 1)
-background_energy_multiplier = 0.2
+background_color = Color(0.309049, 0.250008, 0.665926, 1)
 sky = SubResource("Sky_n774l")
 tonemap_mode = 2
-glow_enabled = true
-glow_intensity = 3.0
+ssr_fade_in = 0.321532
+ssr_fade_out = 0.138696
+ssao_radius = 1.65
+ssao_intensity = 6.8
+ssao_detail = 2.42
+ssil_radius = 1.59
+ssil_intensity = 4.41
+ssil_sharpness = 0.18
+glow_intensity = 0.6
 glow_strength = 1.1
+glow_bloom = 0.07
+glow_hdr_threshold = 2.05
+glow_hdr_scale = 1.68
+glow_hdr_luminance_cap = 43.22
+adjustment_brightness = 0.95
+adjustment_contrast = 3.53
+adjustment_saturation = 2.5
 
-[sub_resource type="Resource" id="Resource_l8ouh"]
+[sub_resource type="Resource" id="Resource_y1ba4"]
 script = ExtResource("3_n774l")
-duration = 1.0
-transition = 0
-ease = 2
+duration = 3.0
+transition = 5
+ease = 1
+metadata/_custom_type_script = "uid://8umksf8e80fw"
 
 [node name="self" type="Node3D"]
 script = ExtResource("1_l8ouh")
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
+transform = Transform3D(-0.898794, -0.388486, 0.203096, 0, 0.463296, 0.886204, -0.438371, 0.796515, -0.416408, 0, 0, 0)
+light_energy = 0.95
+shadow_enabled = true
+directional_shadow_mode = 0
+sky_mode = 1
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
 environment = SubResource("Environment_l8ouh")
@@ -54,11 +75,10 @@ script = ExtResource("4_mciwl")
 script = ExtResource("5_y1ba4")
 
 [node name="Camera3D" type="Camera3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 10)
-fov = 30.0
-size = 9.29
-near = 0.001
-far = 100.0
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 20)
+fov = 50.0
+size = 0.001
+far = 500.0
 
 [node name="PhantomCameraHost" type="Node" parent="Camera3D"]
 process_priority = 300
@@ -66,16 +86,32 @@ process_physics_priority = 300
 script = ExtResource("1_mo8rj")
 
 [node name="PhantomCamera3D" type="Node3D" parent="." node_paths=PackedStringArray("follow_target", "look_at_target")]
-transform = Transform3D(0.999995, 0, 0, 0, 0.999999, 0, 0, 0, 0.999994, 0, 0, 10)
+transform = Transform3D(0.99996, 0, 0, 0, 0.999999, 0, 0, 0, 0.99996, 0, 0, 20)
 top_level = true
 script = ExtResource("2_1w2h5")
+priority = 1
 follow_mode = 2
 follow_target = NodePath("../camRotate/camStuck")
 look_at_mode = 2
 look_at_target = NodePath("../selfMesh")
-tween_resource = SubResource("Resource_l8ouh")
+tween_resource = SubResource("Resource_y1ba4")
+look_at_damping_value = 0.235
+
+[node name="PhantomCamera3D2" type="Node3D" parent="." node_paths=PackedStringArray("follow_target", "look_at_target")]
+transform = Transform3D(0.99996, 0, 0, 0, 0.999999, 0, 0, 0, 0.99996, 0, 0, 25)
+top_level = true
+script = ExtResource("2_1w2h5")
+follow_mode = 2
+follow_target = NodePath("../camRotate/camStuck2")
+look_at_mode = 2
+look_at_target = NodePath("../selfMesh")
+tween_resource = SubResource("Resource_y1ba4")
+look_at_damping_value = 0.235
 
 [node name="camRotate" type="Node3D" parent="."]
 
 [node name="camStuck" type="Node3D" parent="camRotate"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 10)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 20)
+
+[node name="camStuck2" type="Node3D" parent="camRotate"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 25)

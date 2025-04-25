@@ -26,8 +26,13 @@ var mat
 
 const  kugel = preload("res://kugel.tscn")
 
+@onready var cam_stuck: Node3D = $"../camRotate/camStuck"
+@onready var cam_stuck_2: Node3D = $"../camRotate/camStuck2"
+
 @onready var self_mesh: Node3D = $"."
 @onready var cam_rotate: Node3D = $"../camRotate"
+@onready var pc1: PhantomCamera3D = $"../PhantomCamera3D"
+@onready var pc2: PhantomCamera3D = $"../PhantomCamera3D2"
 
 func _process(delta: float) -> void:
 	cam_rotate.rotation.y += rotaSpeed
@@ -43,6 +48,14 @@ func _process(delta: float) -> void:
 		print(Counter.menge)
 
 func _input(event):
+	if event.is_action_pressed("accept"):
+		if pc1.priority == 1:
+			pc1.priority = 0
+			pc2.priority = 1
+		elif pc2.priority == 1:
+			pc2.priority = 0
+			pc1.priority = 1
+			
 	if event.is_action_pressed("add"):
 		KUGEL = kugel.instantiate()
 		add_child(KUGEL)
