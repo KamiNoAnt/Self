@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=3 uid="uid://cq6ykboxrb5ee"]
+[gd_scene load_steps=16 format=3 uid="uid://cq6ykboxrb5ee"]
 
 [ext_resource type="Script" uid="uid://cf5umirvgyha2" path="res://self.gd" id="1_1w2h5"]
 [ext_resource type="Script" uid="uid://bns1eimouvfim" path="res://update.gd" id="1_l8ouh"]
@@ -8,6 +8,8 @@
 [ext_resource type="Script" uid="uid://8umksf8e80fw" path="res://addons/phantom_camera/scripts/resources/tween_resource.gd" id="3_n774l"]
 [ext_resource type="Script" uid="uid://b2wwms7ma0t8k" path="res://ban_mesh.gd" id="4_mciwl"]
 [ext_resource type="Script" uid="uid://d3b4hne752uhs" path="res://usb_mesh.gd" id="5_y1ba4"]
+[ext_resource type="Script" uid="uid://b3rhidptctq1x" path="res://addons/post_processing/node/post_process.gd" id="9_7bmwk"]
+[ext_resource type="Script" uid="uid://ckqwyjomng7nt" path="res://addons/post_processing/resource/post_processing_configuration.gd" id="10_li8t6"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_1w2h5"]
 sky_top_color = Color(0.753431, 0.540321, 0.177807, 1)
@@ -32,12 +34,11 @@ ssao_detail = 2.42
 ssil_radius = 1.59
 ssil_intensity = 4.41
 ssil_sharpness = 0.18
-glow_intensity = 0.6
+glow_intensity = 0.41
 glow_strength = 1.1
-glow_bloom = 0.07
-glow_hdr_threshold = 2.05
-glow_hdr_scale = 1.68
-glow_hdr_luminance_cap = 43.22
+glow_hdr_threshold = 2.79
+glow_hdr_scale = 3.78
+glow_hdr_luminance_cap = 110.34
 adjustment_brightness = 0.95
 adjustment_contrast = 3.53
 adjustment_saturation = 2.5
@@ -49,29 +50,122 @@ transition = 5
 ease = 1
 metadata/_custom_type_script = "uid://8umksf8e80fw"
 
+[sub_resource type="Resource" id="Resource_4xtgn"]
+script = ExtResource("10_li8t6")
+reload = false
+ASCII = false
+ASCIISize = Vector2(4, 9)
+ChromaticAberration = false
+StrenghtCA = 1.0
+Blur = false
+L_O_D = 1.0
+FishEye = false
+FishEyeAspect = 1.0
+FishEyeDistortion = 1.0
+FishEyeRadius = 1.0
+FishEyeAlpha = 1.0
+FishEyeCrop = 1.0
+FishEyeCropColor = Color(0, 0, 0, 1)
+Vignette = false
+VignetteIntensity = 0.4
+VignetteOpacity = 0.5
+VignetteR_G_B = Color(0, 0, 0, 1)
+Glitch = false
+GlitchRange = 0.05
+GlitchNoiseQuality = 250.0
+GlitchIntenity = 0.0088
+GlitchOffset = 0.03
+GlitchColorOffset = 1.3
+Outline = false
+OutlineColor = Color(0, 0, 0, 1)
+OutlineThreshold = 0.0
+OutlineBlend = 0.01
+Grain = false
+GrainPower = 75
+CircularWaves = false
+CircularWavesAmplitude = 2.0
+CircularWavesFrequency = 12.69
+CircularWavesRippleRate = 9.2
+SpeedLines = false
+SpeedLinesColor = Color(1, 1, 1, 1)
+SpeedLinesCount = 2
+SpeedLineDensity = 0.072
+SpeedLineSpeed = 20
+particle_storm = false
+particle_storm_color = Color(0.87, 0.78, 0.6, 1)
+particle_storm_intensity = 0.5
+particle_storm_chaos = 1.0
+particle_storm_scale = 1.0
+particle_storm_density = 1.0
+particle_storm_wind_direction = Vector2(1, 0.2)
+particle_storm_wind_speed = 1.0
+directional_drift = false
+directional_drift_color = Color(0.76, 0.69, 0.5, 0.3)
+directional_drift_density = 0.3
+directional_drift_speed = 1.0
+directional_drift_scale = 30.0
+directional_drift_direction = Vector2(1, 0.5)
+directional_drift_layer_ratio = 1.2
+ColorCorrection = false
+ColorCorrectionTint = Color(0, 0, 0, 1)
+ColorCorrectionBrightness = 0.0
+ColorCorrectionSaturation = 0.0
+Palette = false
+Pixelate = false
+PixelatePixelSize = 5
+CRT = false
+overlay = false
+scanlines_opacity = 0.4
+scanlines_width = 0.25
+grille_opacity = 0.3
+pixelate = false
+roll_speed = 5.0
+roll_size = 7.5
+roll_variation = 0.736
+distort_intensity = 0.011
+noise_opacity = 0.071
+noise_speed = 5.0
+static_noise_intensity = 0.06
+aberration = 0.03
+brightness = 1.4
+discolor = true
+warp_amount = 0.04
+clip_warp = false
+vignette_intensity = 0.4
+vignette_opacity = 0.5
+AnalogMonitor = false
+AnalogMonitorResolution = Vector2(256, 256)
+ScreenShake = false
+ScreenShakePower = 0.1
+metadata/_custom_type_script = "uid://ckqwyjomng7nt"
+
 [node name="self" type="Node3D"]
 script = ExtResource("1_l8ouh")
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
 transform = Transform3D(-0.898794, -0.388486, 0.203096, 0, 0.463296, 0.886204, -0.438371, 0.796515, -0.416408, 0, 0, 0)
-light_energy = 0.95
+light_color = Color(0.949116, 0.811348, 0.547966, 1)
 shadow_enabled = true
 directional_shadow_mode = 0
+directional_shadow_fade_start = 1.0
 sky_mode = 1
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
 environment = SubResource("Environment_l8ouh")
 
-[node name="selfMesh" type="Node3D" parent="."]
+[node name="meshes" type="Node3D" parent="."]
+
+[node name="selfMesh" type="Node3D" parent="meshes"]
 script = ExtResource("1_1w2h5")
 
-[node name="badMesh" type="Node3D" parent="."]
+[node name="badMesh" type="Node3D" parent="meshes"]
 script = ExtResource("2_n774l")
 
-[node name="banMesh" type="Node3D" parent="."]
+[node name="banMesh" type="Node3D" parent="meshes"]
+transform = Transform3D(0.4, 0, 0, 0, 0.4, 0, 0, 0, 0.4, 0, 0, 0)
 script = ExtResource("4_mciwl")
 
-[node name="usbMesh" type="Node3D" parent="."]
+[node name="usbMesh" type="Node3D" parent="meshes"]
 script = ExtResource("5_y1ba4")
 
 [node name="Camera3D" type="Camera3D" parent="."]
@@ -93,7 +187,7 @@ priority = 1
 follow_mode = 2
 follow_target = NodePath("../camRotate/camStuck")
 look_at_mode = 2
-look_at_target = NodePath("../selfMesh")
+look_at_target = NodePath("../meshes/selfMesh")
 tween_resource = SubResource("Resource_y1ba4")
 look_at_damping_value = 0.235
 
@@ -104,7 +198,7 @@ script = ExtResource("2_1w2h5")
 follow_mode = 2
 follow_target = NodePath("../camRotate/camStuck2")
 look_at_mode = 2
-look_at_target = NodePath("../selfMesh")
+look_at_target = NodePath("../meshes/selfMesh")
 tween_resource = SubResource("Resource_y1ba4")
 look_at_damping_value = 0.235
 
@@ -115,3 +209,9 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 20)
 
 [node name="camStuck2" type="Node3D" parent="camRotate"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 25)
+
+[node name="PostProcess" type="CanvasLayer" parent="."]
+follow_viewport_scale = 191.476
+script = ExtResource("9_7bmwk")
+configuration = SubResource("Resource_4xtgn")
+metadata/_custom_type_script = "uid://b3rhidptctq1x"

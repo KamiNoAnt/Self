@@ -1,0 +1,117 @@
+[gd_scene load_steps=13 format=3 uid="uid://cq6ykboxrb5ee"]
+
+[ext_resource type="Script" uid="uid://cf5umirvgyha2" path="res://self.gd" id="1_1w2h5"]
+[ext_resource type="Script" uid="uid://bns1eimouvfim" path="res://update.gd" id="1_l8ouh"]
+[ext_resource type="Script" uid="uid://bd046eokvcnu2" path="res://addons/phantom_camera/scripts/phantom_camera_host/phantom_camera_host.gd" id="1_mo8rj"]
+[ext_resource type="Script" uid="uid://csjccrhj5wnx7" path="res://addons/phantom_camera/scripts/phantom_camera/phantom_camera_3d.gd" id="2_1w2h5"]
+[ext_resource type="Script" uid="uid://c5h1gbypkq0q3" path="res://bad_mesh.gd" id="2_n774l"]
+[ext_resource type="Script" uid="uid://8umksf8e80fw" path="res://addons/phantom_camera/scripts/resources/tween_resource.gd" id="3_n774l"]
+[ext_resource type="Script" uid="uid://b2wwms7ma0t8k" path="res://ban_mesh.gd" id="4_mciwl"]
+[ext_resource type="Script" uid="uid://d3b4hne752uhs" path="res://usb_mesh.gd" id="5_y1ba4"]
+
+[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_1w2h5"]
+sky_top_color = Color(0.753431, 0.540321, 0.177807, 1)
+sky_horizon_color = Color(0.846418, 0.771681, 0.705813, 1)
+ground_bottom_color = Color(0.223639, 0.137798, 0.236843, 1)
+ground_horizon_color = Color(0.846418, 0.771681, 0.705813, 1)
+energy_multiplier = 1.7
+
+[sub_resource type="Sky" id="Sky_n774l"]
+sky_material = SubResource("ProceduralSkyMaterial_1w2h5")
+
+[sub_resource type="Environment" id="Environment_l8ouh"]
+background_mode = 1
+background_color = Color(0.309049, 0.250008, 0.665926, 1)
+sky = SubResource("Sky_n774l")
+tonemap_mode = 2
+ssr_fade_in = 0.321532
+ssr_fade_out = 0.138696
+ssao_radius = 1.65
+ssao_intensity = 6.8
+ssao_detail = 2.42
+ssil_radius = 1.59
+ssil_intensity = 4.41
+ssil_sharpness = 0.18
+glow_intensity = 0.6
+glow_strength = 1.1
+glow_bloom = 0.07
+glow_hdr_threshold = 2.05
+glow_hdr_scale = 1.68
+glow_hdr_luminance_cap = 43.22
+adjustment_brightness = 0.95
+adjustment_contrast = 3.53
+adjustment_saturation = 2.5
+
+[sub_resource type="Resource" id="Resource_y1ba4"]
+script = ExtResource("3_n774l")
+duration = 3.0
+transition = 5
+ease = 1
+metadata/_custom_type_script = "uid://8umksf8e80fw"
+
+[node name="self" type="Node3D"]
+script = ExtResource("1_l8ouh")
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
+transform = Transform3D(-0.898794, -0.388486, 0.203096, 0, 0.463296, 0.886204, -0.438371, 0.796515, -0.416408, 0, 0, 0)
+light_energy = 0.95
+shadow_enabled = true
+directional_shadow_mode = 0
+sky_mode = 1
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource("Environment_l8ouh")
+
+[node name="selfMesh" type="Node3D" parent="."]
+script = ExtResource("1_1w2h5")
+
+[node name="badMesh" type="Node3D" parent="."]
+script = ExtResource("2_n774l")
+
+[node name="banMesh" type="Node3D" parent="."]
+script = ExtResource("4_mciwl")
+
+[node name="usbMesh" type="Node3D" parent="."]
+script = ExtResource("5_y1ba4")
+
+[node name="Camera3D" type="Camera3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 20)
+fov = 50.0
+size = 0.001
+far = 500.0
+
+[node name="PhantomCameraHost" type="Node" parent="Camera3D"]
+process_priority = 300
+process_physics_priority = 300
+script = ExtResource("1_mo8rj")
+
+[node name="PhantomCamera3D" type="Node3D" parent="." node_paths=PackedStringArray("follow_target", "look_at_target")]
+transform = Transform3D(0.99996, 0, 0, 0, 0.999999, 0, 0, 0, 0.99996, 0, 0, 20)
+top_level = true
+script = ExtResource("2_1w2h5")
+priority = 1
+follow_mode = 2
+follow_target = NodePath("../camRotate/camStuck")
+look_at_mode = 2
+look_at_target = NodePath("../selfMesh")
+tween_resource = SubResource("Resource_y1ba4")
+look_at_damping_value = 0.235
+
+[node name="PhantomCamera3D2" type="Node3D" parent="." node_paths=PackedStringArray("follow_target", "look_at_target")]
+transform = Transform3D(0.99996, 0, 0, 0, 0.999999, 0, 0, 0, 0.99996, 0, 0, 25)
+top_level = true
+script = ExtResource("2_1w2h5")
+follow_mode = 2
+follow_target = NodePath("../camRotate/camStuck2")
+look_at_mode = 2
+look_at_target = NodePath("../selfMesh")
+tween_resource = SubResource("Resource_y1ba4")
+look_at_damping_value = 0.235
+
+[node name="camRotate" type="Node3D" parent="."]
+
+[node name="camStuck" type="Node3D" parent="camRotate"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 20)
+
+[node name="camStuck2" type="Node3D" parent="camRotate"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 25)

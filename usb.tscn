@@ -7,10 +7,10 @@ resource_local_to_scene = true
 albedo_color = Color(0, 0, 0, 0)
 emission_enabled = true
 emission_energy_multiplier = 2.25
-ao_enabled = true
 ao_light_affect = 1.0
-disable_receive_shadows = true
 
 [node name="MeshInstance3D" type="MeshInstance3D"]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 0.0942619, 0.168794, 0.0770233)
 material_override = SubResource("StandardMaterial3D_joa5w")
+lod_bias = 128.0
 mesh = ExtResource("1_joa5w")
