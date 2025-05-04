@@ -1,0 +1,79 @@
+[gd_scene load_steps=2 format=3 uid="uid://fftl0wsif3j6"]
+
+[ext_resource type="Script" uid="uid://qg32bkdskrbw" path="res://pop_up_settings.gd" id="1_11thn"]
+
+[node name="pop_up_settings" type="Node2D"]
+script = ExtResource("1_11thn")
+
+[node name="Camera2D" type="Camera2D" parent="."]
+
+[node name="Window" type="Window" parent="."]
+title = "Settings"
+initial_position = 1
+size = Vector2i(300, 500)
+exclusive = true
+unresizable = true
+
+[node name="Camera2D" type="Camera2D" parent="Window"]
+position = Vector2(150, 250)
+
+[node name="r_slider" type="HSlider" parent="Window"]
+offset_left = 17.0
+offset_top = 70.0
+offset_right = 283.0
+offset_bottom = 129.0
+max_value = 1.0
+step = 0.005
+value = 0.5
+
+[node name="g_slider" type="HSlider" parent="Window"]
+offset_left = 17.0
+offset_top = 116.0
+offset_right = 283.0
+offset_bottom = 175.0
+max_value = 1.0
+step = 0.005
+value = 0.1
+
+[node name="b_slider" type="HSlider" parent="Window"]
+offset_left = 17.0
+offset_top = 164.0
+offset_right = 283.0
+offset_bottom = 223.0
+max_value = 1.0
+step = 0.005
+value = 0.1
+
+[node name="a_slider" type="HSlider" parent="Window"]
+offset_left = 17.0
+offset_top = 214.0
+offset_right = 283.0
+offset_bottom = 273.0
+max_value = 1.0
+step = 0.005
+value = 0.3
+
+[node name="screenshot_button" type="Button" parent="Window"]
+offset_left = 51.0
+offset_top = 355.0
+offset_right = 242.0
+offset_bottom = 422.0
+text = "SCREENSHOT"
+
+[node name="reset_button" type="Button" parent="Window"]
+offset_left = 87.0
+offset_top = 444.0
+offset_right = 206.0
+offset_bottom = 491.0
+text = "RESET"
+
+[connection signal="drag_started" from="Window/r_slider" to="." method="_on_r_slider_drag_started"]
+[connection signal="value_changed" from="Window/r_slider" to="." method="_on_r_slider_value_changed"]
+[connection signal="drag_started" from="Window/g_slider" to="." method="_on_g_slider_drag_started"]
+[connection signal="value_changed" from="Window/g_slider" to="." method="_on_g_slider_value_changed"]
+[connection signal="drag_started" from="Window/b_slider" to="." method="_on_b_slider_drag_started"]
+[connection signal="value_changed" from="Window/b_slider" to="." method="_on_b_slider_value_changed"]
+[connection signal="drag_started" from="Window/a_slider" to="." method="_on_a_slider_drag_started"]
+[connection signal="value_changed" from="Window/a_slider" to="." method="_on_a_slider_value_changed"]
+[connection signal="button_up" from="Window/screenshot_button" to="." method="_on_screenshot_button_button_up"]
+[connection signal="button_up" from="Window/reset_button" to="." method="_on_reset_button_button_up"]

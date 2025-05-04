@@ -1,0 +1,19 @@
+[gd_resource type="StandardMaterial3D" format=3 uid="uid://botc4qyvs3v18"]
+
+[resource]
+resource_local_to_scene = true
+albedo_color = Color(0, 0, 0, 1)
+emission_enabled = true
+emission_on_uv2 = true
+rim_tint = 0.0
+clearcoat_enabled = true
+anisotropy = -1.0
+heightmap_deep_parallax = true
+heightmap_min_layers = 8
+heightmap_max_layers = 32
+subsurf_scatter_strength = 1.0
+backlight = Color(0.27344, 0.72613, 0.786917, 1)
+refraction_scale = -1.0
+proximity_fade_distance = 0.01
+distance_fade_min_distance = 271.06
+distance_fade_max_distance = 371.41

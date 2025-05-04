@@ -15,29 +15,26 @@ var sca
 var rad
 var height
 
-var r = 0.5
-var g = 0.1
-var b = 0.1
 var emiR
 var emiG
 var emiB
-var colRange = 0.3
 
 #@onready var self_mesh: Node3D = $meshes/selfMesh
 #@onready var bad_mesh: Node3D = $meshes/badMesh
 #@onready var ban_mesh: Node3D = $meshes/banMesh
 #@onready var usb_mesh: Node3D = $meshes/usbMesh
 
+func _ready() -> void:
+	pass
+
 func _input(event):
 	if event.is_action_pressed("update"):
 		
 		for i in meshes.get_child_count():
 			var c = meshes.get_child(i)
-			Counter.iC = 1
 			
 			for j in c.get_child_count():
 				var m = c.get_child(j)
-				Counter.iC += 1
 				
 				pos = Vector3(randf_range(-posRangeXZ, posRangeXZ), randf_range(-posRangeY, posRangeY), randf_range(-posRangeXZ, posRangeXZ))
 				m.position = pos
@@ -54,9 +51,9 @@ func _input(event):
 				sca = randf_range(0.2, 0.6)
 				m.scale = Vector3(1, 1, 1) * sca
 				
-				emiR = randf_range(-colRange, colRange) + r
-				emiG = randf_range(-colRange, colRange) + g
-				emiB = randf_range(-colRange, colRange) + b
+				emiR = randf_range(-Counter.colRange, Counter.colRange) + Counter.r
+				emiG = randf_range(-Counter.colRange, Counter.colRange) + Counter.g
+				emiB = randf_range(-Counter.colRange, Counter.colRange) + Counter.b
 				m.material_override.emission = Color(emiR, emiG, emiB)
 		
 		

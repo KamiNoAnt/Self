@@ -1,4 +1,4 @@
-[gd_scene load_steps=16 format=3 uid="uid://cq6ykboxrb5ee"]
+[gd_scene load_steps=17 format=3 uid="uid://cq6ykboxrb5ee"]
 
 [ext_resource type="Script" uid="uid://cf5umirvgyha2" path="res://self.gd" id="1_1w2h5"]
 [ext_resource type="Script" uid="uid://bns1eimouvfim" path="res://update.gd" id="1_l8ouh"]
@@ -10,6 +10,7 @@
 [ext_resource type="Script" uid="uid://d3b4hne752uhs" path="res://usb_mesh.gd" id="5_y1ba4"]
 [ext_resource type="Script" uid="uid://b3rhidptctq1x" path="res://addons/post_processing/node/post_process.gd" id="9_7bmwk"]
 [ext_resource type="Script" uid="uid://ckqwyjomng7nt" path="res://addons/post_processing/resource/post_processing_configuration.gd" id="10_li8t6"]
+[ext_resource type="PackedScene" uid="uid://fftl0wsif3j6" path="res://pop_up_settings.tscn" id="11_4xtgn"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_1w2h5"]
 sky_top_color = Color(0.753431, 0.540321, 0.177807, 1)
@@ -26,22 +27,21 @@ background_mode = 1
 background_color = Color(0.309049, 0.250008, 0.665926, 1)
 sky = SubResource("Sky_n774l")
 tonemap_mode = 2
-ssr_fade_in = 0.321532
-ssr_fade_out = 0.138696
-ssao_radius = 1.65
-ssao_intensity = 6.8
-ssao_detail = 2.42
-ssil_radius = 1.59
+ssao_radius = 11.05
+ssao_intensity = 7.41
+ssil_radius = 0.01
 ssil_intensity = 4.41
 ssil_sharpness = 0.18
-glow_intensity = 0.41
+sdfgi_use_occlusion = true
+sdfgi_bounce_feedback = 0.57
+sdfgi_cascades = 8
+sdfgi_min_cell_size = 0.0125
+sdfgi_cascade0_distance = 0.8
+sdfgi_energy = 1.79
+glow_intensity = 0.57
 glow_strength = 1.1
-glow_hdr_threshold = 2.79
-glow_hdr_scale = 3.78
-glow_hdr_luminance_cap = 110.34
-adjustment_brightness = 0.95
-adjustment_contrast = 3.53
-adjustment_saturation = 2.5
+glow_bloom = 0.1
+glow_hdr_threshold = 1.35
 
 [sub_resource type="Resource" id="Resource_y1ba4"]
 script = ExtResource("3_n774l")
@@ -148,7 +148,6 @@ light_color = Color(0.949116, 0.811348, 0.547966, 1)
 shadow_enabled = true
 directional_shadow_mode = 0
 directional_shadow_fade_start = 1.0
-sky_mode = 1
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
 environment = SubResource("Environment_l8ouh")
@@ -215,3 +214,5 @@ follow_viewport_scale = 191.476
 script = ExtResource("9_7bmwk")
 configuration = SubResource("Resource_4xtgn")
 metadata/_custom_type_script = "uid://b3rhidptctq1x"
+
+[node name="pop_up_settings" parent="." instance=ExtResource("11_4xtgn")]

@@ -1,5 +1,6 @@
 extends Node3D
 var KUGEL
+@onready var meshes: Node3D = $".."
 
 var pos
 var posRangeXZ = 4
@@ -14,13 +15,9 @@ var sca
 var rad
 var height
 
-var r = 0.5
-var g = 0.1
-var b = 0.1
 var emiR
 var emiG
 var emiB
-var colRange = 0.3
 
 var mat
 
@@ -46,7 +43,6 @@ func _process(delta: float) -> void:
 		add_child(KUGEL)
 		Counter.menge += 1
 		Counter.mengeKugeln += 1
-		Counter.iC = 1
 		_update()
 		print(Counter.menge)
 
@@ -61,17 +57,18 @@ func _input(event):
 			pc1.priority = 1
 			rotaSpeed = 0.001
 			
+	if event.is_action_pressed("screenshot"):
+		take_screenshot()
+			
 	if event.is_action_pressed("add"):
 		KUGEL = kugel.instantiate()
 		add_child(KUGEL)
 		Counter.menge += 1
 		Counter.mengeKugeln += 1
-		Counter.iC = 1
 		print(Counter.menge)
 		
 		for i in Counter.mengeKugeln:
 			i = get_child(i)
-			Counter.iC += 1
 			
 			pos = Vector3(randf_range(-posRangeXZ, posRangeXZ), randf_range(-posRangeY, posRangeY), randf_range(-posRangeXZ, posRangeXZ))
 			i.position = pos
@@ -88,15 +85,28 @@ func _input(event):
 			sca = randf_range(0.2, 0.6)
 			i.scale = Vector3(1, 1, 1) * sca
 			
-			emiR = randf_range(-colRange, colRange) + r
-			emiG = randf_range(-colRange, colRange) + g
-			emiB = randf_range(-colRange, colRange) + b
+			emiR = randf_range(-Counter.colRange, Counter.colRange) + Counter.r
+			emiG = randf_range(-Counter.colRange, Counter.colRange) + Counter.g
+			emiB = randf_range(-Counter.colRange, Counter.colRange) + Counter.b
 			i.material_override.emission = Color(emiR, emiG, emiB)
+			
+	if event.is_action_pressed("reset"):
+		for i in meshes.get_child_count():
+			var c = meshes.get_child(i)
+		
+			for j in c.get_child_count():
+				var m = c.get_child(j)
+				
+				m.queue_free()
+				Counter.menge = 0
+				Counter.mengeBad = 0
+				Counter.mengeKugeln = 0
+				Counter.mengeBan = 0
+				Counter.mengeUsb = 0
 			
 func _update():
 	for i in Counter.mengeKugeln:
 			i = get_child(i)
-			Counter.iC += 1
 			
 			pos = Vector3(randf_range(-posRangeXZ, posRangeXZ), randf_range(-posRangeY, posRangeY), randf_range(-posRangeXZ, posRangeXZ))
 			i.position = pos
@@ -113,7 +123,14 @@ func _update():
 			sca = randf_range(0.2, 0.6)
 			i.scale = Vector3(1, 1, 1) * sca
 			
-			emiR = randf_range(-colRange, colRange) + r
-			emiG = randf_range(-colRange, colRange) + g
-			emiB = randf_range(-colRange, colRange) + b
+			emiR = randf_range(-Counter.colRange, Counter.colRange) + Counter.r
+			emiG = randf_range(-Counter.colRange, Counter.colRange) + Counter.g
+			emiB = randf_range(-Counter.colRange, Counter.colRange) + Counter.b
 			i.material_override.emission = Color(emiR, emiG, emiB)
+			
+func take_screenshot():
+	var timestamp = Time.get_datetime_string_from_system(false, true).replace(":", "_")
+	await RenderingServer.frame_post_draw
+	var sshot = get_viewport().get_texture().get_image()
+	#sshot.resize(3, 4, Image.INTERPOLATE_TRILINEAR)
+	sshot.save_png("user://self_screenshots/screenshot " + timestamp + ".png")

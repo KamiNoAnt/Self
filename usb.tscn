@@ -1,16 +1,10 @@
 [gd_scene load_steps=3 format=3 uid="uid://brwk7568b6yvr"]
 
 [ext_resource type="ArrayMesh" uid="uid://di1wn6aeahcrc" path="res://assets/usb.obj" id="1_joa5w"]
-
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_joa5w"]
-resource_local_to_scene = true
-albedo_color = Color(0, 0, 0, 0)
-emission_enabled = true
-emission_energy_multiplier = 2.25
-ao_light_affect = 1.0
+[ext_resource type="Material" uid="uid://botc4qyvs3v18" path="res://material.tres" id="1_k8rbi"]
 
 [node name="MeshInstance3D" type="MeshInstance3D"]
 transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 0.0942619, 0.168794, 0.0770233)
-material_override = SubResource("StandardMaterial3D_joa5w")
+material_override = ExtResource("1_k8rbi")
 lod_bias = 128.0
 mesh = ExtResource("1_joa5w")
