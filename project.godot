@@ -31,6 +31,10 @@ window/subwindows/embed_subwindows=false
 
 enabled=PackedStringArray("res://addons/phantom_camera/plugin.cfg", "res://addons/post_processing/plugin.cfg")
 
+[gui]
+
+theme/custom_font="uid://c4mm3of2mc8o5"
+
 [input]
 
 add={
