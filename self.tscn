@@ -1,4 +1,4 @@
-[gd_scene load_steps=17 format=3 uid="uid://cq6ykboxrb5ee"]
+[gd_scene load_steps=16 format=3 uid="uid://cq6ykboxrb5ee"]
 
 [ext_resource type="Script" uid="uid://cf5umirvgyha2" path="res://self.gd" id="1_1w2h5"]
 [ext_resource type="Script" uid="uid://bns1eimouvfim" path="res://update.gd" id="1_l8ouh"]
@@ -10,7 +10,6 @@
 [ext_resource type="Script" uid="uid://d3b4hne752uhs" path="res://usb_mesh.gd" id="5_y1ba4"]
 [ext_resource type="Script" uid="uid://b3rhidptctq1x" path="res://addons/post_processing/node/post_process.gd" id="9_7bmwk"]
 [ext_resource type="Script" uid="uid://ckqwyjomng7nt" path="res://addons/post_processing/resource/post_processing_configuration.gd" id="10_li8t6"]
-[ext_resource type="PackedScene" uid="uid://fftl0wsif3j6" path="res://pop_up_settings.tscn" id="11_4xtgn"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_1w2h5"]
 sky_top_color = Color(0.753431, 0.540321, 0.177807, 1)
@@ -24,7 +23,7 @@ sky_material = SubResource("ProceduralSkyMaterial_1w2h5")
 
 [sub_resource type="Environment" id="Environment_l8ouh"]
 background_mode = 1
-background_color = Color(1, 1, 1, 1)
+background_color = Color(0.0728426, 0.0728426, 0.0728426, 1)
 sky = SubResource("Sky_n774l")
 tonemap_mode = 2
 ssao_radius = 11.05
@@ -214,5 +213,3 @@ follow_viewport_scale = 191.476
 script = ExtResource("9_7bmwk")
 configuration = SubResource("Resource_4xtgn")
 metadata/_custom_type_script = "uid://b3rhidptctq1x"
-
-[node name="pop_up_settings" parent="." instance=ExtResource("11_4xtgn")]
