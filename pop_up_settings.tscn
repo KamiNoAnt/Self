@@ -1,6 +1,7 @@
-[gd_scene load_steps=2 format=3 uid="uid://fftl0wsif3j6"]
+[gd_scene load_steps=3 format=3 uid="uid://fftl0wsif3j6"]
 
 [ext_resource type="Script" uid="uid://qg32bkdskrbw" path="res://pop_up_settings.gd" id="1_11thn"]
+[ext_resource type="FontFile" uid="uid://c4mm3of2mc8o5" path="res://addons/phantom_camera/fonts/Nunito-Black.ttf" id="2_dws5e"]
 
 [node name="pop_up_settings" type="Node2D"]
 script = ExtResource("1_11thn")
@@ -56,12 +57,16 @@ offset_left = 51.0
 offset_top = 355.0
 offset_right = 242.0
 offset_bottom = 422.0
+theme_override_fonts/font = ExtResource("2_dws5e")
+text = "SCREENSHOT"
 
 [node name="reset_button" type="Button" parent="Window"]
 offset_left = 87.0
 offset_top = 444.0
 offset_right = 206.0
 offset_bottom = 491.0
+theme_override_fonts/font = ExtResource("2_dws5e")
+text = "Reset"
 
 [connection signal="drag_started" from="Window/r_slider" to="." method="_on_r_slider_drag_started"]
 [connection signal="value_changed" from="Window/r_slider" to="." method="_on_r_slider_value_changed"]
