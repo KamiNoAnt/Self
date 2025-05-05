@@ -11,7 +11,6 @@ script = ExtResource("1_11thn")
 title = "Settings"
 initial_position = 1
 size = Vector2i(300, 500)
-exclusive = true
 unresizable = true
 
 [node name="Camera2D" type="Camera2D" parent="Window"]

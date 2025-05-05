@@ -24,7 +24,7 @@ sky_material = SubResource("ProceduralSkyMaterial_1w2h5")
 
 [sub_resource type="Environment" id="Environment_l8ouh"]
 background_mode = 1
-background_color = Color(0.309049, 0.250008, 0.665926, 1)
+background_color = Color(1, 1, 1, 1)
 sky = SubResource("Sky_n774l")
 tonemap_mode = 2
 ssao_radius = 11.05
