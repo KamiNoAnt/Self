@@ -10,8 +10,8 @@ script = ExtResource("1_11thn")
 [node name="Window" type="Window" parent="."]
 initial_position = 1
 size = Vector2i(300, 500)
-exclusive = true
 unresizable = true
+popup_window = true
 
 [node name="Camera2D" type="Camera2D" parent="Window"]
 position = Vector2(150, 250)
