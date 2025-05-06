@@ -6,6 +6,7 @@ albedo_color = Color(0, 0, 0, 1)
 emission_enabled = true
 emission_on_uv2 = true
 rim_tint = 0.0
+clearcoat_roughness = 1.0
 anisotropy = -1.0
 heightmap_deep_parallax = true
 heightmap_min_layers = 8
