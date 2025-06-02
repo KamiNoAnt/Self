@@ -1,18 +1,24 @@
 extends Node2D
 @onready var screenshot_button: Button = $Window/screenshot_button
 @onready var reset_button: Button = $Window/reset_button
-
-@onready var r_slider: HSlider = $Window/r_slider
-@onready var g_slider: HSlider = $Window/g_slider
-@onready var b_slider: HSlider = $Window/b_slider
-@onready var a_slider: HSlider = $Window/a_slider
-
 @onready var meshes: Node3D = $"../meshes"
+@onready var option_button: OptionButton = $Window/OptionButton
 
-var emiR
-var emiG
-var emiB
-
+func _ready() -> void:
+	for i  in Counter.paletten.keys():
+		option_button.add_item(i)
+		var gradient = Gradient.new()
+		gradient.remove_point(1)
+		var texture: GradientTexture2D = GradientTexture2D.new()
+		texture.width = 100
+		texture.height = 16     
+		gradient.interpolation_mode = Gradient.GRADIENT_INTERPOLATE_CONSTANT
+		for x in Counter.paletten[i].size():
+			gradient.add_point(1.0/Counter.paletten[i].size()*x, Counter.paletten[i][x])
+		gradient.remove_point(0)
+		texture.gradient =  gradient
+		option_button.set_item_icon(option_button.item_count-1, texture)
+		
 func _on_screenshot_button_button_up() -> void:
 	take_screenshot()
 	
@@ -22,37 +28,6 @@ func take_screenshot():
 	var sshot = get_viewport().get_texture().get_image()
 	#sshot.resize(3, 4, Image.INTERPOLATE_TRILINEAR)
 	sshot.save_png("user://self_screenshots/screenshot " + timestamp + ".png")
-
-func _on_r_slider_value_changed(value: float) -> void:
-	Counter.r = r_slider.value
-	new_color()
-
-func _on_g_slider_value_changed(value: float) -> void:
-	Counter.g = g_slider.value
-	new_color()
-
-func _on_b_slider_value_changed(value: float) -> void:
-	Counter.b = b_slider.value
-	new_color()
-
-
-func _on_a_slider_value_changed(value: float) -> void:
-	Counter.colRange = a_slider.value
-	new_color()
-
-func new_color():
-	for i in meshes.get_child_count():
-		var c = meshes.get_child(i)
-		
-		for j in c.get_child_count():
-			var m = c.get_child(j)
-			
-			emiR = randf_range(-Counter.colRange, Counter.colRange) + Counter.r
-			emiG = randf_range(-Counter.colRange, Counter.colRange) + Counter.g
-			emiB = randf_range(-Counter.colRange, Counter.colRange) + Counter.b
-			
-			m.material_override.emission = Color(emiR, emiG, emiB)
-
 
 func _on_reset_button_button_up() -> void:
 	for i in meshes.get_child_count():
@@ -67,3 +42,7 @@ func _on_reset_button_button_up() -> void:
 			Counter.mengeKugeln = 0
 			Counter.mengeBan = 0
 			Counter.mengeUsb = 0
+			
+func _on_option_button_item_selected(index: int) -> void:
+	Counter.palette = Counter.paletten.keys()[index]
+	
