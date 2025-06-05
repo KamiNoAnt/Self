@@ -16,13 +16,8 @@ var sca
 var rad
 var height
 
-var emiR
-var emiG
-var emiB
-
 func _ready() -> void:
 	pass
-	#points_dict.keys()
 
 func _input(event):
 	if event.is_action_pressed("update"):
