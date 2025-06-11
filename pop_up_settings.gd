@@ -4,6 +4,11 @@ extends Node2D
 @onready var meshes: Node3D = $"../meshes"
 @onready var option_button: OptionButton = $Window/OptionButton
 
+@onready var card_lines: AnimatedSprite3D = $"../camRotate/camStuck2/card/cardLines"
+@onready var card_boxes: AnimatedSprite3D = $"../camRotate/camStuck2/card/cardBoxes"
+
+var card_loop: bool = false
+
 func _ready() -> void:
 	for i  in Counter.paletten.keys():
 		option_button.add_item(i)
@@ -18,6 +23,12 @@ func _ready() -> void:
 		gradient.remove_point(0)
 		texture.gradient =  gradient
 		option_button.set_item_icon(option_button.item_count-1, texture)
+		
+		card_lines.modulate = Counter.paletten[Counter.palette][0]
+		if Counter.palette == 'black' or Counter.palette == 'grey' or Counter.palette == 'pure_white':
+			card_boxes.modulate = Counter.paletten[Counter.palette][0]
+		else:
+			card_boxes.modulate = Counter.paletten[Counter.palette][4]
 		
 func _on_screenshot_button_button_up() -> void:
 	take_screenshot()
@@ -45,4 +56,31 @@ func _on_reset_button_button_up() -> void:
 			
 func _on_option_button_item_selected(index: int) -> void:
 	Counter.palette = Counter.paletten.keys()[index]
+	update_colors()
+	get_window().grab_focus()
 	
+func update_colors():
+	card_lines.modulate = Counter.paletten[Counter.palette][0]
+	
+	if Counter.palette == 'black' or Counter.palette == 'grey' or Counter.palette == 'pure_white':
+		card_boxes.modulate = Counter.paletten[Counter.palette][0]
+	else:
+		card_boxes.modulate = Counter.paletten[Counter.palette][4]
+	
+	for i in meshes.get_child_count():
+		var c = meshes.get_child(i)
+		
+		for j in c.get_child_count():
+			var m = c.get_child(j)
+			
+			m.material_override.emission = Counter.paletten[Counter.palette].pick_random()
+			
+func _process(delta: float) -> void:
+	if card_lines.is_playing() and card_lines.frame == 299:
+		card_loop = true
+	elif not card_lines.is_playing:
+		card_loop = false
+	
+	if card_lines.frame == 0 and card_loop == true:
+		card_lines.frame = 110
+		card_boxes.frame = 110

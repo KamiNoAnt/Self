@@ -1,8 +1,11 @@
 extends Node3D
 var KUGEL
 @onready var meshes: Node3D = $".."
+@onready var card_lines: AnimatedSprite3D = $"../../camRotate/camStuck2/card/cardLines"
+@onready var card_boxes: AnimatedSprite3D = $"../../camRotate/camStuck2/card/cardBoxes"
 
-var rotaSpeed = 0.001
+
+var rotaSpeed = 0.004
 
 const  kugel = preload("res://kugel.tscn")
 
@@ -19,7 +22,7 @@ const  kugel = preload("res://kugel.tscn")
 func _process(delta: float) -> void:
 	cam_rotate.rotation.y += rotaSpeed
 	if Input.is_action_pressed("rotate_left"):
-		cam_rotate.rotation.y -= rotaSpeed * 2
+		cam_rotate.rotation.y -= rotaSpeed * 2 * delta
 		
 	if Input.is_action_pressed("fast"):
 		KUGEL = kugel.instantiate()
@@ -34,11 +37,15 @@ func _input(event):
 		if pc1.priority == 1:
 			pc1.priority = 0
 			pc2.priority = 1
-			rotaSpeed = 0.002
+			tcg_start()
+			await get_tree().create_timer(1.5).timeout
+			rotaSpeed = rotaSpeed * 2
+			
 		elif pc2.priority == 1:
 			pc2.priority = 0
 			pc1.priority = 1
-			rotaSpeed = 0.001
+			tcg_stop()
+			rotaSpeed = rotaSpeed / 2
 			
 	if event.is_action_pressed("screenshot"):
 		take_screenshot()
@@ -104,3 +111,14 @@ func take_screenshot():
 	var sshot = get_viewport().get_texture().get_image()
 	#sshot.resize(3, 4, Image.INTERPOLATE_TRILINEAR)
 	sshot.save_png("user://self_screenshots/screenshot " + timestamp + ".png")
+	
+func tcg_stop():
+	await get_tree().create_timer(0.5).timeout
+	card_lines.stop()
+	card_boxes.stop()
+	
+func tcg_start():
+	card_lines.frame = 0
+	card_lines.play()
+	card_boxes.frame = 0
+	card_boxes.play()

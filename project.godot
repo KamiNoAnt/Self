@@ -13,6 +13,7 @@ config_version=5
 config/name="Self"
 run/main_scene="uid://cq6ykboxrb5ee"
 config/features=PackedStringArray("4.4", "Forward Plus")
+run/max_fps=30
 boot_splash/bg_color=Color(0.317349, 0.116521, 0.272886, 1)
 config/icon="res://icon.svg"
 
@@ -23,8 +24,8 @@ Counter="*res://counter.gd"
 
 [display]
 
-window/size/viewport_width=768
-window/size/viewport_height=1024
+window/size/viewport_width=720
+window/size/viewport_height=1280
 window/subwindows/embed_subwindows=false
 window/per_pixel_transparency/allowed=true
 
