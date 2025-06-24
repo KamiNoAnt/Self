@@ -6,6 +6,7 @@ var KUGEL
 
 
 var rotaSpeed = 0.004
+var scale_speed = 0.02
 
 const  kugel = preload("res://kugel.tscn")
 
@@ -18,6 +19,9 @@ const  kugel = preload("res://kugel.tscn")
 @onready var pc1: PhantomCamera3D = $"../../PhantomCamera3D"
 @onready var pc2: PhantomCamera3D = $"../../PhantomCamera3D2"
 
+@onready var tcg_overlay: Control = $"../../CanvasLayer/tcg_overlay"
+
+@onready var pop_up_settings: Node2D = $"../../pop_up_settings"
 
 func _process(delta: float) -> void:
 	cam_rotate.rotation.y += rotaSpeed
@@ -31,20 +35,28 @@ func _process(delta: float) -> void:
 		Counter.mengeKugeln += 1
 		#_update()
 		print(Counter.menge)
+		
+	if pc2.priority == 1 and tcg_overlay.scale > Vector2(1, 1):
+		tcg_overlay.scale = tcg_overlay.scale - Vector2(scale_speed, scale_speed)
+		
+	elif pc1.priority == 1 and tcg_overlay.scale < Vector2(1.6, 1.6):
+		tcg_overlay.scale = tcg_overlay.scale + Vector2(scale_speed, scale_speed)
 
 func _input(event):
 	if event.is_action_pressed("accept"):
 		if pc1.priority == 1:
 			pc1.priority = 0
 			pc2.priority = 1
-			tcg_start()
-			await get_tree().create_timer(1.5).timeout
+			tcg_overlay.get_child(0).play()
+			tcg_overlay.get_child(1).play()
 			rotaSpeed = rotaSpeed * 2
 			
 		elif pc2.priority == 1:
 			pc2.priority = 0
 			pc1.priority = 1
-			tcg_stop()
+			await get_tree().create_timer(1.5).timeout
+			tcg_overlay.get_child(0).stop()
+			tcg_overlay.get_child(1).stop()
 			rotaSpeed = rotaSpeed / 2
 			
 	if event.is_action_pressed("screenshot"):

@@ -6,6 +6,8 @@ var mengeKugeln = 0
 var mengeBan = 0
 var mengeUsb = 0
 
+var start_anim = false
+
 #var r = 0.5
 #var g = 0.1
 #var b = 0.1
@@ -34,4 +36,4 @@ var paletten = {
 	'pure_white': [Color('EEEEEE')]
 	}
 	
-var palette = 'mono_red'
+var palette = 'mono_yellow'

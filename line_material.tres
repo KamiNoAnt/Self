@@ -1,0 +1,11 @@
+[gd_resource type="ShaderMaterial" load_steps=2 format=3 uid="uid://cyaftlv456c5g"]
+
+[ext_resource type="Shader" uid="uid://dp8jkbfffelmm" path="res://mask_out_lines.gdshader" id="1_up40n"]
+
+[resource]
+shader = ExtResource("1_up40n")
+shader_parameter/chroma_key = Color(0, 0, 0, 1)
+shader_parameter/intensity = 1.0
+shader_parameter/chroma_key_1 = Color(1, 1, 1, 1)
+shader_parameter/chroma_color_1 = Color(1, 1, 1, 1)
+shader_parameter/intensity_1 = 1.0

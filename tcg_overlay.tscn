@@ -1,0 +1,40 @@
+[gd_scene load_steps=5 format=3 uid="uid://dvaqth0in7oq3"]
+
+[ext_resource type="Material" uid="uid://cyaftlv456c5g" path="res://line_material.tres" id="1_fuohl"]
+[ext_resource type="VideoStream" uid="uid://c8iugis4qvwar" path="res://boxes_vid.ogv" id="1_o2otq"]
+[ext_resource type="Material" uid="uid://uxwu5nkqn5xt" path="res://box_material.tres" id="3_6ln16"]
+[ext_resource type="VideoStream" uid="uid://r8etfl0x87ty" path="res://lines_vid.ogv" id="3_qcrlb"]
+
+[node name="tcg_overlay" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="lines" type="VideoStreamPlayer" parent="."]
+material = ExtResource("1_fuohl")
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+pivot_offset = Vector2(360, 640)
+stream = ExtResource("3_qcrlb")
+expand = true
+loop = true
+
+[node name="boxes" type="VideoStreamPlayer" parent="."]
+material = ExtResource("3_6ln16")
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+pivot_offset = Vector2(360, 640)
+stream = ExtResource("1_o2otq")
+expand = true
+loop = true
