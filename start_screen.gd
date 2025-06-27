@@ -19,7 +19,7 @@ func _on_start_button_pressed() -> void:
 	Counter.start_anim = true
 
 func _process(delta: float) -> void:
-	START_NOISE.offset = START_NOISE.offset + Vector3(speed, speed/2, 0).rotated(Vector3(0,0,1), rot) * delta
+	START_NOISE.offset = START_NOISE.offset + Vector3(speed, speed/2.0, 0).rotated(Vector3(0,0,1), rot) * delta
 	rot += 0.005
 	
 	if seed_timer == seed_goal:
