@@ -634,7 +634,6 @@ theme_override_styles/normal = ExtResource("8_g3qv0")
 text = "THATS MEEEEEEEEEEEEEE"
 
 [node name="CanvasLayer" type="CanvasLayer" parent="Window"]
-visible = false
 
 [node name="start_screen" parent="Window/CanvasLayer" instance=ExtResource("9_g3qv0")]
 
