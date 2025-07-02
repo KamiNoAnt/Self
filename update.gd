@@ -16,6 +16,8 @@ var sca
 var rad
 var height
 
+@onready var post_fx: CanvasLayer = $PostFX
+
 func _ready() -> void:
 	pass
 

@@ -1,19 +1,16 @@
-[gd_scene load_steps=24 format=3 uid="uid://fftl0wsif3j6"]
+[gd_scene load_steps=23 format=3 uid="uid://fftl0wsif3j6"]
 
 [ext_resource type="Script" uid="uid://qg32bkdskrbw" path="res://pop_up_settings.gd" id="1_11thn"]
 [ext_resource type="Script" uid="uid://mccf4vgk60ec" path="res://scroll_container.gd" id="2_dws5e"]
 [ext_resource type="Texture2D" uid="uid://bvuqvvunxmcqi" path="res://bg_texture.tres" id="2_k5q8d"]
 [ext_resource type="StyleBox" uid="uid://2bsu1rclupfn" path="res://normal_button.tres" id="3_r0xuj"]
 [ext_resource type="StyleBox" uid="uid://terfepg63xlv" path="res://button_color.tres" id="4_hdpka"]
+[ext_resource type="StyleBox" uid="uid://dhoywqgg021uv" path="res://scroll_grabber.tres" id="5_jsytf"]
 [ext_resource type="Texture2D" uid="uid://x1ro4c0oir51" path="res://color_button_tex.tres" id="5_rw0tc"]
-[ext_resource type="Texture2D" uid="uid://b2ynxpen81m4o" path="res://color_palette.png" id="5_uch0a"]
-[ext_resource type="Texture2D" uid="uid://1l54qql86k0e" path="res://objects.png" id="6_uch0a"]
 [ext_resource type="FontFile" uid="uid://dqjcdgg5dagml" path="res://Rubik-Bold.ttf" id="7_17gyj"]
-[ext_resource type="Texture2D" uid="uid://d0v7jxpmcv6vb" path="res://vfx.png" id="7_nisic"]
-[ext_resource type="Theme" uid="uid://df76nby0ft83w" path="res://font_theme.tres" id="7_uch0a"]
+[ext_resource type="FontFile" uid="uid://c6ip2bgm0bhyp" path="res://PatuaOne-Regular.ttf" id="7_btfl8"]
 [ext_resource type="StyleBox" uid="uid://b77a3ta4tw086" path="res://commit_button.tres" id="8_g3qv0"]
 [ext_resource type="PackedScene" uid="uid://l620gffixa01" path="res://start_screen.tscn" id="9_g3qv0"]
-[ext_resource type="StyleBox" uid="uid://cnfudvtwrk1ir" path="res://vfx_button.tres" id="13_j61b0"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_jsytf"]
 
@@ -22,23 +19,48 @@
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_11thn"]
 bg_color = Color(0.85098, 0.137255, 0.243137, 1)
 
-[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_nisic"]
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_btfl8"]
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_uch0a"]
+[sub_resource type="ImageTexture" id="ImageTexture_r0kai"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_g3qv0"]
+bg_color = Color(0, 0, 0, 1)
 corner_radius_top_left = 20
 corner_radius_top_right = 20
 corner_radius_bottom_right = 20
 corner_radius_bottom_left = 20
 
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_btfl8"]
+bg_color = Color(1, 1, 1, 1)
+border_width_left = 80
+border_width_top = 40
+border_width_right = 80
+border_color = Color(0.8, 0.8, 0.8, 0)
+corner_radius_top_left = 60
+corner_radius_top_right = 60
+corner_radius_bottom_right = 20
+corner_radius_bottom_left = 20
+expand_margin_top = 40.0
+
+[sub_resource type="Theme" id="Theme_jsytf"]
+default_font = ExtResource("7_17gyj")
+default_font_size = 24
+HScrollBar/styles/grabber = ExtResource("5_jsytf")
+HScrollBar/styles/grabber_highlight = ExtResource("5_jsytf")
+HScrollBar/styles/grabber_pressed = ExtResource("5_jsytf")
+HScrollBar/styles/scroll = SubResource("StyleBoxFlat_btfl8")
+HScrollBar/styles/scroll_focus = SubResource("StyleBoxFlat_btfl8")
+
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_hdpka"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_g3qv0"]
 
-[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_j61b0"]
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_nisic"]
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_rw0tc"]
 bg_color = Color(1, 1, 1, 1)
-skew = Vector2(0.25, 0)
+corner_radius_top_left = 20
+corner_radius_top_right = 20
+corner_radius_bottom_right = 20
+corner_radius_bottom_left = 20
 
 [node name="pop_up_settings" type="Node2D"]
 script = ExtResource("1_11thn")
@@ -66,10 +88,8 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 texture = ExtResource("2_k5q8d")
-metadata/_edit_lock_ = true
 
 [node name="screenshot_button" type="Button" parent="Window"]
-visible = false
 offset_left = 204.0
 offset_top = 1197.0
 offset_right = 337.0
@@ -85,7 +105,6 @@ theme_override_styles/normal = ExtResource("3_r0xuj")
 text = "SCREENSHOT"
 
 [node name="reset_button" type="Button" parent="Window"]
-visible = false
 offset_left = 433.0
 offset_top = 1219.0
 offset_right = 492.0
@@ -94,394 +113,260 @@ theme_override_styles/focus = SubResource("StyleBoxEmpty_r0kai")
 theme_override_styles/normal = SubResource("StyleBoxFlat_11thn")
 text = "Reset"
 
-[node name="switch_buttons" type="Control" parent="Window"]
-layout_mode = 3
-anchor_left = 0.06
-anchor_top = 0.842
-anchor_right = 0.94
-anchor_bottom = 0.975
-offset_left = -0.200001
-offset_top = 0.239868
-offset_right = 0.199951
-grow_horizontal = 2
-grow_vertical = 0
-
-[node name="color" type="Button" parent="Window/switch_buttons"]
-layout_mode = 1
+[node name="color_button" type="Button" parent="Window"]
 anchors_preset = -1
-anchor_right = 0.263
-anchor_bottom = 0.982
-offset_left = 5.41
-offset_top = 11.51
-offset_right = 232.668
-offset_bottom = 237.57
-scale = Vector2(0.354, 0.354)
-theme_override_styles/focus = SubResource("StyleBoxEmpty_nisic")
-text = "
-"
-icon = ExtResource("5_uch0a")
-flat = true
-icon_alignment = 1
-
-[node name="objects" type="Button" parent="Window/switch_buttons"]
-layout_mode = 1
-anchors_preset = -1
-anchor_left = 0.369
-anchor_right = 0.632
-anchor_bottom = 0.982
-offset_left = 5.27403
-offset_top = 11.82
-offset_right = 253.532
-offset_bottom = 213.88
-scale = Vector2(0.378, 0.378)
-theme_override_styles/focus = SubResource("StyleBoxEmpty_nisic")
-icon = ExtResource("6_uch0a")
-flat = true
-icon_alignment = 1
-
-[node name="vfx" type="Button" parent="Window/switch_buttons"]
-layout_mode = 1
-anchors_preset = -1
-anchor_left = 0.73
-anchor_right = 0.994
-anchor_bottom = 0.982
-offset_left = 13.915
-offset_top = 8.455
-offset_right = 163.579
-offset_bottom = 156.515
-scale = Vector2(0.492, 0.492)
-theme_override_styles/focus = SubResource("StyleBoxEmpty_nisic")
-icon = ExtResource("7_nisic")
-flat = true
-icon_alignment = 1
-
-[node name="ColorRect" type="ColorRect" parent="Window/switch_buttons"]
-layout_mode = 0
-offset_left = 207.0
-offset_top = 84.0
-offset_right = 211.0
-offset_bottom = 124.0
-rotation = 0.785398
-
-[node name="ColorRect2" type="ColorRect" parent="Window/switch_buttons"]
-layout_mode = 0
-offset_left = 177.0
-offset_top = 61.0
-offset_right = 181.0
-offset_bottom = 93.0
-rotation = -0.785398
-
-[node name="ColorRect3" type="ColorRect" parent="Window/switch_buttons"]
-layout_mode = 0
-offset_left = 460.0
-offset_top = 84.0
-offset_right = 464.0
-offset_bottom = 124.0
-rotation = 0.785398
-
-[node name="ColorRect4" type="ColorRect" parent="Window/switch_buttons"]
-layout_mode = 0
-offset_left = 430.0
-offset_top = 61.0
-offset_right = 434.0
-offset_bottom = 93.0
-rotation = -0.785398
-
-[node name="screen1" type="Control" parent="Window"]
-layout_mode = 3
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-mouse_filter = 2
-
-[node name="color_button" type="Button" parent="Window/screen1"]
-z_index = 2
-layout_mode = 1
-anchors_preset = -1
-anchor_left = 0.229
-anchor_top = 0.151
-anchor_right = 0.772
-anchor_bottom = 0.213
-offset_left = 0.119995
-offset_top = -0.280014
-offset_right = 0.159973
-offset_bottom = 0.359985
-grow_horizontal = 2
-flat = true
-
-[node name="c1" type="Button" parent="Window/screen1/color_button"]
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-offset_bottom = -35.0
-grow_horizontal = 2
-grow_vertical = 2
-flat = true
-
-[node name="c2" type="Button" parent="Window/screen1/color_button"]
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-offset_bottom = -35.0
-grow_horizontal = 2
-grow_vertical = 2
-flat = true
-
-[node name="c3" type="Button" parent="Window/screen1/color_button"]
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-offset_bottom = -35.0
-grow_horizontal = 2
-grow_vertical = 2
-flat = true
-
-[node name="c4" type="Button" parent="Window/screen1/color_button"]
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-offset_bottom = -35.0
-grow_horizontal = 2
-grow_vertical = 2
-flat = true
-
-[node name="c5" type="Button" parent="Window/screen1/color_button"]
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-offset_bottom = -35.0
-grow_horizontal = 2
-grow_vertical = 2
-flat = true
-
-[node name="c6" type="Button" parent="Window/screen1/color_button"]
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-offset_bottom = -35.0
-grow_horizontal = 2
-grow_vertical = 2
-flat = true
-
-[node name="c7" type="Button" parent="Window/screen1/color_button"]
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-offset_bottom = -35.0
-grow_horizontal = 2
-grow_vertical = 2
-flat = true
-
-[node name="c8" type="Button" parent="Window/screen1/color_button"]
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-offset_bottom = -35.0
-grow_horizontal = 2
-grow_vertical = 2
-flat = true
-
-[node name="c9" type="Button" parent="Window/screen1/color_button"]
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-offset_bottom = -35.0
-grow_horizontal = 2
-grow_vertical = 2
-flat = true
-
-[node name="c10" type="Button" parent="Window/screen1/color_button"]
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-offset_bottom = -35.0
-grow_horizontal = 2
-grow_vertical = 2
-flat = true
-
-[node name="c11" type="Button" parent="Window/screen1/color_button"]
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-offset_bottom = -35.0
-grow_horizontal = 2
-grow_vertical = 2
-flat = true
-
-[node name="c12" type="Button" parent="Window/screen1/color_button"]
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-offset_bottom = -35.0
-grow_horizontal = 2
-grow_vertical = 2
-flat = true
-
-[node name="c13" type="Button" parent="Window/screen1/color_button"]
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-offset_bottom = -35.0
-grow_horizontal = 2
-grow_vertical = 2
-flat = true
-
-[node name="c14" type="Button" parent="Window/screen1/color_button"]
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-offset_bottom = -35.0
-grow_horizontal = 2
-grow_vertical = 2
-flat = true
-
-[node name="c15" type="Button" parent="Window/screen1/color_button"]
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-offset_bottom = -35.0
-grow_horizontal = 2
-grow_vertical = 2
-flat = true
-
-[node name="c16" type="Button" parent="Window/screen1/color_button"]
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-offset_bottom = -35.0
-grow_horizontal = 2
-grow_vertical = 2
-flat = true
-
-[node name="color_button2" type="Button" parent="Window/screen1"]
-z_index = 2
-layout_mode = 1
-anchors_preset = -1
-anchor_left = 0.158
-anchor_top = 0.151
-anchor_right = 0.842
-anchor_bottom = 0.213
-offset_left = 0.239998
-offset_top = -0.280014
-offset_right = -0.240051
-offset_bottom = 0.359985
-grow_horizontal = 2
+anchor_left = 0.222
+anchor_top = 0.066
+anchor_right = 0.778
+anchor_bottom = 0.125
+offset_left = 0.159988
+offset_top = 0.520004
+offset_right = -0.160034
 text = "COLOR"
 icon = ExtResource("5_rw0tc")
 flat = true
 
-[node name="color_background" type="PanelContainer" parent="Window/screen1"]
-clip_children = 1
-z_index = 1
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-offset_left = 124.0
-offset_top = 281.0
-offset_right = -114.0
-offset_bottom = -239.0
-grow_horizontal = 2
-grow_vertical = 2
-mouse_filter = 2
-theme_override_styles/panel = SubResource("StyleBoxFlat_uch0a")
-
-[node name="ColorRect" type="ColorRect" parent="Window/screen1/color_background"]
-layout_mode = 2
-mouse_filter = 2
-color = Color(0.116508, 0.118744, 0.156803, 1)
-
-[node name="color_background2" type="PanelContainer" parent="Window/screen1"]
-clip_children = 1
-z_index = 1
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-offset_left = 91.0
-offset_top = 184.0
-offset_right = -86.0
-offset_bottom = -999.0
-grow_horizontal = 2
-grow_vertical = 2
-mouse_filter = 2
-theme_override_styles/panel = SubResource("StyleBoxFlat_uch0a")
-
-[node name="ColorRect" type="ColorRect" parent="Window/screen1/color_background2"]
-layout_mode = 2
-mouse_filter = 2
-color = Color(0.559206, 0.49621, 0.708952, 1)
-
-[node name="RichTextLabel" type="RichTextLabel" parent="Window/screen1"]
-layout_mode = 1
-anchors_preset = -1
-anchor_left = 0.165
-anchor_top = 0.014
-anchor_right = 0.835
-anchor_bottom = 0.132
-offset_left = 0.199997
-offset_top = 0.0799999
-offset_right = -0.200012
-offset_bottom = 0.0400085
-theme_override_fonts/normal_font = ExtResource("7_17gyj")
-theme_override_font_sizes/normal_font_size = 60
-text = "1. Choose a color palette"
-horizontal_alignment = 1
-
-[node name="screen2" type="Control" parent="Window"]
+[node name="c1" type="Button" parent="Window/color_button"]
 visible = false
-layout_mode = 3
+layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
+offset_right = 8.0
+offset_bottom = 8.0
 grow_horizontal = 2
 grow_vertical = 2
-mouse_filter = 2
 
-[node name="ScrollContainer" type="ScrollContainer" parent="Window/screen2"]
-z_index = 2
+[node name="c2" type="Button" parent="Window/color_button"]
+visible = false
 layout_mode = 1
-anchors_preset = -1
-anchor_top = 0.169
+anchors_preset = 15
 anchor_right = 1.0
-anchor_bottom = 0.67
-offset_top = -0.320023
-offset_bottom = -0.600037
-theme = ExtResource("7_uch0a")
+anchor_bottom = 1.0
+offset_right = 8.0
+offset_bottom = 8.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="c3" type="Button" parent="Window/color_button"]
+visible = false
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_right = 8.0
+offset_bottom = 8.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="c4" type="Button" parent="Window/color_button"]
+visible = false
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_right = 8.0
+offset_bottom = 8.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="c5" type="Button" parent="Window/color_button"]
+visible = false
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_right = 8.0
+offset_bottom = 8.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="c6" type="Button" parent="Window/color_button"]
+visible = false
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_right = 8.0
+offset_bottom = 8.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="c7" type="Button" parent="Window/color_button"]
+visible = false
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_right = 8.0
+offset_bottom = 8.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="c8" type="Button" parent="Window/color_button"]
+visible = false
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_right = 8.0
+offset_bottom = 8.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="c9" type="Button" parent="Window/color_button"]
+visible = false
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_right = 8.0
+offset_bottom = 8.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="c10" type="Button" parent="Window/color_button"]
+visible = false
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_right = 8.0
+offset_bottom = 8.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="c11" type="Button" parent="Window/color_button"]
+visible = false
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_right = 8.0
+offset_bottom = 8.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="c12" type="Button" parent="Window/color_button"]
+visible = false
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_right = 8.0
+offset_bottom = 8.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="c13" type="Button" parent="Window/color_button"]
+visible = false
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_right = 8.0
+offset_bottom = 8.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="c14" type="Button" parent="Window/color_button"]
+visible = false
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_right = 8.0
+offset_bottom = 8.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="c15" type="Button" parent="Window/color_button"]
+visible = false
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_right = 8.0
+offset_bottom = 8.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="c16" type="Button" parent="Window/color_button"]
+visible = false
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_right = 8.0
+offset_bottom = 8.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="OptionButton" type="OptionButton" parent="Window"]
+visible = false
+z_index = 1
+custom_minimum_size = Vector2(400, 75)
+anchors_preset = -1
+anchor_left = 0.222
+anchor_top = 0.066
+anchor_right = 0.778
+anchor_bottom = 0.125
+offset_left = 0.159988
+offset_top = 0.520004
+offset_right = -0.160034
+theme_override_constants/align_to_largest_stylebox = 40
+theme_override_fonts/font = ExtResource("7_btfl8")
+theme_override_font_sizes/font_size = 18
+theme_override_styles/focus = SubResource("StyleBoxEmpty_btfl8")
+theme_override_icons/arrow = SubResource("ImageTexture_r0kai")
+flat = true
+alignment = 1
+expand_icon = true
+
+[node name="PanelContainer" type="PanelContainer" parent="Window/OptionButton"]
+clip_children = 1
+z_as_relative = false
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -25.0
+offset_top = -12.5
+offset_right = 24.9999
+offset_bottom = 12.5
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 1
+theme_override_styles/panel = SubResource("StyleBoxFlat_g3qv0")
+
+[node name="ColorRect" type="ColorRect" parent="Window/OptionButton/PanelContainer"]
+z_as_relative = false
+layout_mode = 2
+mouse_filter = 1
+color = Color(0.52416, 0.503169, 0.655228, 1)
+
+[node name="ScrollContainer" type="ScrollContainer" parent="Window"]
+anchors_preset = -1
+anchor_top = 0.186
+anchor_right = 1.0
+anchor_bottom = 0.625
+offset_top = -0.0800018
+theme = SubResource("Theme_jsytf")
 horizontal_scroll_mode = 2
 vertical_scroll_mode = 0
 script = ExtResource("2_dws5e")
 
-[node name="GridContainer" type="GridContainer" parent="Window/screen2/ScrollContainer"]
+[node name="GridContainer" type="GridContainer" parent="Window/ScrollContainer"]
 layout_mode = 2
-mouse_filter = 2
 theme_override_constants/h_separation = 30
 theme_override_constants/v_separation = 30
 columns = 12
 
-[node name="spacer" type="Control" parent="Window/screen2/ScrollContainer/GridContainer"]
+[node name="spacer" type="Control" parent="Window/ScrollContainer/GridContainer"]
 custom_minimum_size = Vector2(10, 0)
 layout_mode = 2
 
-[node name="badminton_button" type="Button" parent="Window/screen2/ScrollContainer/GridContainer"]
+[node name="badminton_button" type="Button" parent="Window/ScrollContainer/GridContainer"]
 custom_minimum_size = Vector2(140, 140)
 layout_mode = 2
 theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
@@ -495,7 +380,7 @@ theme_override_styles/normal = ExtResource("3_r0xuj")
 text = "Badminton Bat"
 autowrap_mode = 2
 
-[node name="usb_button" type="Button" parent="Window/screen2/ScrollContainer/GridContainer"]
+[node name="usb_button" type="Button" parent="Window/ScrollContainer/GridContainer"]
 custom_minimum_size = Vector2(140, 140)
 layout_mode = 2
 theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
@@ -509,7 +394,7 @@ theme_override_styles/normal = ExtResource("3_r0xuj")
 text = "USB"
 autowrap_mode = 2
 
-[node name="banana_button" type="Button" parent="Window/screen2/ScrollContainer/GridContainer"]
+[node name="banana_button" type="Button" parent="Window/ScrollContainer/GridContainer"]
 custom_minimum_size = Vector2(140, 140)
 layout_mode = 2
 theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
@@ -523,7 +408,7 @@ theme_override_styles/normal = ExtResource("3_r0xuj")
 text = "Banana"
 autowrap_mode = 2
 
-[node name="capsule_button" type="Button" parent="Window/screen2/ScrollContainer/GridContainer"]
+[node name="capsule_button" type="Button" parent="Window/ScrollContainer/GridContainer"]
 custom_minimum_size = Vector2(140, 140)
 layout_mode = 2
 theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
@@ -537,7 +422,7 @@ theme_override_styles/normal = ExtResource("3_r0xuj")
 text = "Capsule"
 autowrap_mode = 2
 
-[node name="Button5" type="Button" parent="Window/screen2/ScrollContainer/GridContainer"]
+[node name="Button5" type="Button" parent="Window/ScrollContainer/GridContainer"]
 custom_minimum_size = Vector2(140, 140)
 layout_mode = 2
 theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
@@ -551,7 +436,7 @@ theme_override_styles/normal = ExtResource("3_r0xuj")
 text = "[empty]"
 autowrap_mode = 2
 
-[node name="Button6" type="Button" parent="Window/screen2/ScrollContainer/GridContainer"]
+[node name="Button6" type="Button" parent="Window/ScrollContainer/GridContainer"]
 custom_minimum_size = Vector2(140, 140)
 layout_mode = 2
 theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
@@ -565,7 +450,7 @@ theme_override_styles/normal = ExtResource("3_r0xuj")
 text = "[empty]"
 autowrap_mode = 2
 
-[node name="Button7" type="Button" parent="Window/screen2/ScrollContainer/GridContainer"]
+[node name="Button7" type="Button" parent="Window/ScrollContainer/GridContainer"]
 custom_minimum_size = Vector2(140, 140)
 layout_mode = 2
 theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
@@ -579,7 +464,7 @@ theme_override_styles/normal = ExtResource("3_r0xuj")
 text = "[empty]"
 autowrap_mode = 2
 
-[node name="Button8" type="Button" parent="Window/screen2/ScrollContainer/GridContainer"]
+[node name="Button8" type="Button" parent="Window/ScrollContainer/GridContainer"]
 custom_minimum_size = Vector2(140, 140)
 layout_mode = 2
 theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
@@ -593,7 +478,7 @@ theme_override_styles/normal = ExtResource("3_r0xuj")
 text = "[empty]"
 autowrap_mode = 2
 
-[node name="Button9" type="Button" parent="Window/screen2/ScrollContainer/GridContainer"]
+[node name="Button9" type="Button" parent="Window/ScrollContainer/GridContainer"]
 custom_minimum_size = Vector2(140, 140)
 layout_mode = 2
 theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
@@ -607,7 +492,7 @@ theme_override_styles/normal = ExtResource("3_r0xuj")
 text = "[empty]"
 autowrap_mode = 2
 
-[node name="Button10" type="Button" parent="Window/screen2/ScrollContainer/GridContainer"]
+[node name="Button10" type="Button" parent="Window/ScrollContainer/GridContainer"]
 custom_minimum_size = Vector2(140, 140)
 layout_mode = 2
 theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
@@ -621,15 +506,15 @@ theme_override_styles/normal = ExtResource("3_r0xuj")
 text = "[empty]"
 autowrap_mode = 2
 
-[node name="spacer2" type="Control" parent="Window/screen2/ScrollContainer/GridContainer"]
+[node name="spacer2" type="Control" parent="Window/ScrollContainer/GridContainer"]
 custom_minimum_size = Vector2(10, 0)
 layout_mode = 2
 
-[node name="spacer3" type="Control" parent="Window/screen2/ScrollContainer/GridContainer"]
+[node name="spacer3" type="Control" parent="Window/ScrollContainer/GridContainer"]
 custom_minimum_size = Vector2(10, 0)
 layout_mode = 2
 
-[node name="Button11" type="Button" parent="Window/screen2/ScrollContainer/GridContainer"]
+[node name="Button11" type="Button" parent="Window/ScrollContainer/GridContainer"]
 custom_minimum_size = Vector2(140, 140)
 layout_mode = 2
 theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
@@ -643,7 +528,7 @@ theme_override_styles/normal = ExtResource("3_r0xuj")
 text = "[empty]"
 autowrap_mode = 2
 
-[node name="Button12" type="Button" parent="Window/screen2/ScrollContainer/GridContainer"]
+[node name="Button12" type="Button" parent="Window/ScrollContainer/GridContainer"]
 custom_minimum_size = Vector2(140, 140)
 layout_mode = 2
 theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
@@ -657,7 +542,7 @@ theme_override_styles/normal = ExtResource("3_r0xuj")
 text = "[empty]"
 autowrap_mode = 2
 
-[node name="Button13" type="Button" parent="Window/screen2/ScrollContainer/GridContainer"]
+[node name="Button13" type="Button" parent="Window/ScrollContainer/GridContainer"]
 custom_minimum_size = Vector2(140, 140)
 layout_mode = 2
 theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
@@ -671,7 +556,7 @@ theme_override_styles/normal = ExtResource("3_r0xuj")
 text = "[empty]"
 autowrap_mode = 2
 
-[node name="Button14" type="Button" parent="Window/screen2/ScrollContainer/GridContainer"]
+[node name="Button14" type="Button" parent="Window/ScrollContainer/GridContainer"]
 custom_minimum_size = Vector2(140, 140)
 layout_mode = 2
 theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
@@ -685,7 +570,7 @@ theme_override_styles/normal = ExtResource("3_r0xuj")
 text = "[empty]"
 autowrap_mode = 2
 
-[node name="Button15" type="Button" parent="Window/screen2/ScrollContainer/GridContainer"]
+[node name="Button15" type="Button" parent="Window/ScrollContainer/GridContainer"]
 custom_minimum_size = Vector2(140, 140)
 layout_mode = 2
 theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
@@ -699,7 +584,7 @@ theme_override_styles/normal = ExtResource("3_r0xuj")
 text = "[empty]"
 autowrap_mode = 2
 
-[node name="Button16" type="Button" parent="Window/screen2/ScrollContainer/GridContainer"]
+[node name="Button16" type="Button" parent="Window/ScrollContainer/GridContainer"]
 custom_minimum_size = Vector2(140, 140)
 layout_mode = 2
 theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
@@ -713,7 +598,7 @@ theme_override_styles/normal = ExtResource("3_r0xuj")
 text = "[empty]"
 autowrap_mode = 2
 
-[node name="Button17" type="Button" parent="Window/screen2/ScrollContainer/GridContainer"]
+[node name="Button17" type="Button" parent="Window/ScrollContainer/GridContainer"]
 custom_minimum_size = Vector2(140, 140)
 layout_mode = 2
 theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
@@ -727,7 +612,7 @@ theme_override_styles/normal = ExtResource("3_r0xuj")
 text = "[empty]"
 autowrap_mode = 2
 
-[node name="Button18" type="Button" parent="Window/screen2/ScrollContainer/GridContainer"]
+[node name="Button18" type="Button" parent="Window/ScrollContainer/GridContainer"]
 custom_minimum_size = Vector2(140, 140)
 layout_mode = 2
 theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
@@ -741,7 +626,7 @@ theme_override_styles/normal = ExtResource("3_r0xuj")
 text = "[empty]"
 autowrap_mode = 2
 
-[node name="Button19" type="Button" parent="Window/screen2/ScrollContainer/GridContainer"]
+[node name="Button19" type="Button" parent="Window/ScrollContainer/GridContainer"]
 custom_minimum_size = Vector2(140, 140)
 layout_mode = 2
 theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
@@ -755,7 +640,7 @@ theme_override_styles/normal = ExtResource("3_r0xuj")
 text = "[empty]"
 autowrap_mode = 2
 
-[node name="Button20" type="Button" parent="Window/screen2/ScrollContainer/GridContainer"]
+[node name="Button20" type="Button" parent="Window/ScrollContainer/GridContainer"]
 custom_minimum_size = Vector2(140, 140)
 layout_mode = 2
 theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
@@ -769,15 +654,15 @@ theme_override_styles/normal = ExtResource("3_r0xuj")
 text = "[empty]"
 autowrap_mode = 2
 
-[node name="spacer4" type="Control" parent="Window/screen2/ScrollContainer/GridContainer"]
+[node name="spacer4" type="Control" parent="Window/ScrollContainer/GridContainer"]
 custom_minimum_size = Vector2(10, 0)
 layout_mode = 2
 
-[node name="spacer5" type="Control" parent="Window/screen2/ScrollContainer/GridContainer"]
+[node name="spacer5" type="Control" parent="Window/ScrollContainer/GridContainer"]
 custom_minimum_size = Vector2(10, 0)
 layout_mode = 2
 
-[node name="Button21" type="Button" parent="Window/screen2/ScrollContainer/GridContainer"]
+[node name="Button21" type="Button" parent="Window/ScrollContainer/GridContainer"]
 custom_minimum_size = Vector2(140, 140)
 layout_mode = 2
 theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
@@ -791,7 +676,7 @@ theme_override_styles/normal = ExtResource("3_r0xuj")
 text = "[empty]"
 autowrap_mode = 2
 
-[node name="Button22" type="Button" parent="Window/screen2/ScrollContainer/GridContainer"]
+[node name="Button22" type="Button" parent="Window/ScrollContainer/GridContainer"]
 custom_minimum_size = Vector2(140, 140)
 layout_mode = 2
 theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
@@ -805,7 +690,7 @@ theme_override_styles/normal = ExtResource("3_r0xuj")
 text = "[empty]"
 autowrap_mode = 2
 
-[node name="Button23" type="Button" parent="Window/screen2/ScrollContainer/GridContainer"]
+[node name="Button23" type="Button" parent="Window/ScrollContainer/GridContainer"]
 custom_minimum_size = Vector2(140, 140)
 layout_mode = 2
 theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
@@ -819,7 +704,7 @@ theme_override_styles/normal = ExtResource("3_r0xuj")
 text = "[empty]"
 autowrap_mode = 2
 
-[node name="Button24" type="Button" parent="Window/screen2/ScrollContainer/GridContainer"]
+[node name="Button24" type="Button" parent="Window/ScrollContainer/GridContainer"]
 custom_minimum_size = Vector2(140, 140)
 layout_mode = 2
 theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
@@ -833,7 +718,7 @@ theme_override_styles/normal = ExtResource("3_r0xuj")
 text = "[empty]"
 autowrap_mode = 2
 
-[node name="Button25" type="Button" parent="Window/screen2/ScrollContainer/GridContainer"]
+[node name="Button25" type="Button" parent="Window/ScrollContainer/GridContainer"]
 custom_minimum_size = Vector2(140, 140)
 layout_mode = 2
 theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
@@ -847,7 +732,7 @@ theme_override_styles/normal = ExtResource("3_r0xuj")
 text = "[empty]"
 autowrap_mode = 2
 
-[node name="Button26" type="Button" parent="Window/screen2/ScrollContainer/GridContainer"]
+[node name="Button26" type="Button" parent="Window/ScrollContainer/GridContainer"]
 custom_minimum_size = Vector2(140, 140)
 layout_mode = 2
 theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
@@ -861,7 +746,7 @@ theme_override_styles/normal = ExtResource("3_r0xuj")
 text = "[empty]"
 autowrap_mode = 2
 
-[node name="Button27" type="Button" parent="Window/screen2/ScrollContainer/GridContainer"]
+[node name="Button27" type="Button" parent="Window/ScrollContainer/GridContainer"]
 custom_minimum_size = Vector2(140, 140)
 layout_mode = 2
 theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
@@ -875,7 +760,7 @@ theme_override_styles/normal = ExtResource("3_r0xuj")
 text = "[empty]"
 autowrap_mode = 2
 
-[node name="Button28" type="Button" parent="Window/screen2/ScrollContainer/GridContainer"]
+[node name="Button28" type="Button" parent="Window/ScrollContainer/GridContainer"]
 custom_minimum_size = Vector2(140, 140)
 layout_mode = 2
 theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
@@ -889,7 +774,7 @@ theme_override_styles/normal = ExtResource("3_r0xuj")
 text = "[empty]"
 autowrap_mode = 2
 
-[node name="Button29" type="Button" parent="Window/screen2/ScrollContainer/GridContainer"]
+[node name="Button29" type="Button" parent="Window/ScrollContainer/GridContainer"]
 custom_minimum_size = Vector2(140, 140)
 layout_mode = 2
 theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
@@ -903,7 +788,7 @@ theme_override_styles/normal = ExtResource("3_r0xuj")
 text = "[empty]"
 autowrap_mode = 2
 
-[node name="Button30" type="Button" parent="Window/screen2/ScrollContainer/GridContainer"]
+[node name="Button30" type="Button" parent="Window/ScrollContainer/GridContainer"]
 custom_minimum_size = Vector2(140, 140)
 layout_mode = 2
 theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
@@ -917,216 +802,38 @@ theme_override_styles/normal = ExtResource("3_r0xuj")
 text = "[empty]"
 autowrap_mode = 2
 
-[node name="spacer6" type="Control" parent="Window/screen2/ScrollContainer/GridContainer"]
+[node name="spacer6" type="Control" parent="Window/ScrollContainer/GridContainer"]
 custom_minimum_size = Vector2(10, 0)
 layout_mode = 2
 
-[node name="RichTextLabel" type="RichTextLabel" parent="Window/screen2"]
-layout_mode = 1
-anchors_preset = -1
-anchor_left = 0.165
-anchor_top = 0.014
-anchor_right = 0.835
-anchor_bottom = 0.132
-offset_left = 0.199997
-offset_top = 0.0799999
-offset_right = -0.200012
-offset_bottom = 0.0400085
-theme_override_fonts/normal_font = ExtResource("7_17gyj")
-theme_override_font_sizes/normal_font_size = 60
-text = "2. Add some objects"
-horizontal_alignment = 1
-
-[node name="screen3" type="Control" parent="Window"]
-visible = false
-layout_mode = 3
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-mouse_filter = 2
-
-[node name="commit_button" type="Button" parent="Window/screen3"]
-layout_mode = 1
+[node name="commit_button" type="Button" parent="Window"]
 anchors_preset = -1
 anchor_left = 0.136
-anchor_top = 0.617
+anchor_top = 0.7
 anchor_right = 0.897
-anchor_bottom = 0.734
+anchor_bottom = 0.817
 offset_left = 0.0799942
-offset_top = 45.2399
+offset_top = -6.10352e-05
 offset_right = 0.159973
-offset_bottom = 45.48
+offset_bottom = 0.23999
 theme_override_fonts/font = ExtResource("7_17gyj")
-theme_override_font_sizes/font_size = 60
+theme_override_font_sizes/font_size = 34
 theme_override_styles/focus = SubResource("StyleBoxEmpty_g3qv0")
 theme_override_styles/hover = ExtResource("8_g3qv0")
-theme_override_styles/pressed = ExtResource("8_g3qv0")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_rw0tc")
 theme_override_styles/normal = ExtResource("8_g3qv0")
-text = "THATS ME"
-
-[node name="ColorRect" type="ColorRect" parent="Window/screen3"]
-layout_mode = 0
-offset_left = 39.0
-offset_top = 724.0
-offset_right = 681.0
-offset_bottom = 726.0
-
-[node name="RichTextLabel" type="RichTextLabel" parent="Window/screen3"]
-layout_mode = 1
-anchors_preset = -1
-anchor_left = 0.165
-anchor_top = 0.014
-anchor_right = 0.835
-anchor_bottom = 0.132
-offset_left = 0.199997
-offset_top = 0.0799999
-offset_right = -0.200012
-offset_bottom = 0.0400085
-theme_override_fonts/normal_font = ExtResource("7_17gyj")
-theme_override_font_sizes/normal_font_size = 60
-text = "3. What's your mood?"
-horizontal_alignment = 1
-vertical_alignment = 1
-
-[node name="RichTextLabel2" type="RichTextLabel" parent="Window/screen3"]
-layout_mode = 1
-anchors_preset = -1
-anchor_left = 0.165
-anchor_top = 0.014
-anchor_right = 0.835
-anchor_bottom = 0.132
-offset_left = 0.199997
-offset_top = 774.08
-offset_right = -0.200012
-offset_bottom = 653.04
-theme_override_fonts/normal_font = ExtResource("7_17gyj")
-theme_override_font_sizes/normal_font_size = 20
-text = "Is this you?"
-horizontal_alignment = 1
-vertical_alignment = 1
-
-[node name="RichTextLabel3" type="RichTextLabel" parent="Window/screen3"]
-layout_mode = 1
-anchors_preset = -1
-anchor_left = 0.165
-anchor_top = 0.014
-anchor_right = 0.835
-anchor_bottom = 0.132
-offset_left = 134.2
-offset_top = 202.08
-offset_right = 138.8
-offset_bottom = 546.04
-theme_override_constants/line_separation = 48
-theme_override_fonts/normal_font = ExtResource("7_17gyj")
-theme_override_font_sizes/normal_font_size = 40
-text = "           cryptic
-        nostalgic
-     dizzy
-   focused
-weak"
-fit_content = true
-
-[node name="Button" type="Button" parent="Window/screen3"]
-custom_minimum_size = Vector2(75, 75)
-layout_mode = 2
-offset_left = 256.0
-offset_top = 208.0
-offset_right = 331.0
-offset_bottom = 283.0
-theme_override_styles/focus = SubResource("StyleBoxEmpty_j61b0")
-theme_override_styles/hover = ExtResource("13_j61b0")
-theme_override_styles/pressed = ExtResource("13_j61b0")
-theme_override_styles/normal = SubResource("StyleBoxFlat_nisic")
-toggle_mode = true
-
-[node name="Button2" type="Button" parent="Window/screen3"]
-custom_minimum_size = Vector2(75, 75)
-layout_mode = 2
-offset_left = 231.0
-offset_top = 303.0
-offset_right = 306.0
-offset_bottom = 378.0
-theme_override_styles/focus = SubResource("StyleBoxEmpty_j61b0")
-theme_override_styles/hover = ExtResource("13_j61b0")
-theme_override_styles/pressed = ExtResource("13_j61b0")
-theme_override_styles/normal = SubResource("StyleBoxFlat_nisic")
-toggle_mode = true
-
-[node name="Button3" type="Button" parent="Window/screen3"]
-custom_minimum_size = Vector2(75, 75)
-layout_mode = 2
-offset_left = 206.0
-offset_top = 398.0
-offset_right = 281.0
-offset_bottom = 473.0
-theme_override_styles/focus = SubResource("StyleBoxEmpty_j61b0")
-theme_override_styles/hover = ExtResource("13_j61b0")
-theme_override_styles/pressed = ExtResource("13_j61b0")
-theme_override_styles/normal = SubResource("StyleBoxFlat_nisic")
-toggle_mode = true
-
-[node name="Button4" type="Button" parent="Window/screen3"]
-custom_minimum_size = Vector2(75, 75)
-layout_mode = 2
-offset_left = 183.0
-offset_top = 493.0
-offset_right = 258.0
-offset_bottom = 568.0
-theme_override_styles/focus = SubResource("StyleBoxEmpty_j61b0")
-theme_override_styles/hover = ExtResource("13_j61b0")
-theme_override_styles/pressed = ExtResource("13_j61b0")
-theme_override_styles/normal = SubResource("StyleBoxFlat_nisic")
-toggle_mode = true
-
-[node name="Button5" type="Button" parent="Window/screen3"]
-custom_minimum_size = Vector2(75, 75)
-layout_mode = 2
-offset_left = 160.0
-offset_top = 588.0
-offset_right = 235.0
-offset_bottom = 663.0
-theme_override_styles/focus = SubResource("StyleBoxEmpty_j61b0")
-theme_override_styles/hover = ExtResource("13_j61b0")
-theme_override_styles/pressed = ExtResource("13_j61b0")
-theme_override_styles/normal = SubResource("StyleBoxFlat_nisic")
-toggle_mode = true
+text = "THATS MEEEEEEEEEEEEEE"
 
 [node name="CanvasLayer" type="CanvasLayer" parent="Window"]
 
 [node name="start_screen" parent="Window/CanvasLayer" instance=ExtResource("9_g3qv0")]
+visible = false
 
 [connection signal="button_up" from="Window/screenshot_button" to="." method="_on_screenshot_button_button_up"]
 [connection signal="button_up" from="Window/reset_button" to="." method="_on_reset_button_button_up"]
-[connection signal="pressed" from="Window/switch_buttons/color" to="." method="_on_color_pressed"]
-[connection signal="pressed" from="Window/switch_buttons/objects" to="." method="_on_objects_pressed"]
-[connection signal="pressed" from="Window/switch_buttons/vfx" to="." method="_on_vfx_pressed"]
-[connection signal="pressed" from="Window/screen1/color_button" to="." method="_on_color_button_pressed"]
-[connection signal="pressed" from="Window/screen1/color_button/c1" to="." method="_on_c_1_pressed"]
-[connection signal="pressed" from="Window/screen1/color_button/c2" to="." method="_on_c_2_pressed"]
-[connection signal="pressed" from="Window/screen1/color_button/c3" to="." method="_on_c_3_pressed"]
-[connection signal="pressed" from="Window/screen1/color_button/c4" to="." method="_on_c_4_pressed"]
-[connection signal="pressed" from="Window/screen1/color_button/c5" to="." method="_on_c_5_pressed"]
-[connection signal="pressed" from="Window/screen1/color_button/c6" to="." method="_on_c_6_pressed"]
-[connection signal="pressed" from="Window/screen1/color_button/c7" to="." method="_on_c_7_pressed"]
-[connection signal="pressed" from="Window/screen1/color_button/c8" to="." method="_on_c_8_pressed"]
-[connection signal="pressed" from="Window/screen1/color_button/c9" to="." method="_on_c_9_pressed"]
-[connection signal="pressed" from="Window/screen1/color_button/c10" to="." method="_on_c_10_pressed"]
-[connection signal="pressed" from="Window/screen1/color_button/c11" to="." method="_on_c_11_pressed"]
-[connection signal="pressed" from="Window/screen1/color_button/c12" to="." method="_on_c_12_pressed"]
-[connection signal="pressed" from="Window/screen1/color_button/c13" to="." method="_on_c_13_pressed"]
-[connection signal="pressed" from="Window/screen1/color_button/c14" to="." method="_on_c_14_pressed"]
-[connection signal="pressed" from="Window/screen1/color_button/c15" to="." method="_on_c_15_pressed"]
-[connection signal="pressed" from="Window/screen1/color_button/c16" to="." method="_on_c_16_pressed"]
-[connection signal="pressed" from="Window/screen1/color_button2" to="." method="_on_color_button_pressed"]
-[connection signal="pressed" from="Window/screen2/ScrollContainer/GridContainer/badminton_button" to="." method="_on_badminton_button_pressed"]
-[connection signal="pressed" from="Window/screen2/ScrollContainer/GridContainer/usb_button" to="." method="_on_usb_button_pressed"]
-[connection signal="pressed" from="Window/screen2/ScrollContainer/GridContainer/banana_button" to="." method="_on_banana_button_pressed"]
-[connection signal="pressed" from="Window/screen2/ScrollContainer/GridContainer/capsule_button" to="." method="_on_capsule_button_pressed"]
-[connection signal="pressed" from="Window/screen3/commit_button" to="." method="_on_commit_button_pressed"]
-[connection signal="toggled" from="Window/screen3/Button" to="." method="_on_button_toggled"]
-[connection signal="toggled" from="Window/screen3/Button2" to="." method="_on_button_2_toggled"]
-[connection signal="toggled" from="Window/screen3/Button3" to="." method="_on_button_3_toggled"]
-[connection signal="toggled" from="Window/screen3/Button4" to="." method="_on_button_4_toggled"]
-[connection signal="toggled" from="Window/screen3/Button5" to="." method="_on_button_5_toggled"]
+[connection signal="item_selected" from="Window/OptionButton" to="." method="_on_option_button_item_selected"]
+[connection signal="pressed" from="Window/ScrollContainer/GridContainer/badminton_button" to="." method="_on_badminton_button_pressed"]
+[connection signal="pressed" from="Window/ScrollContainer/GridContainer/usb_button" to="." method="_on_usb_button_pressed"]
+[connection signal="pressed" from="Window/ScrollContainer/GridContainer/banana_button" to="." method="_on_banana_button_pressed"]
+[connection signal="pressed" from="Window/ScrollContainer/GridContainer/capsule_button" to="." method="_on_capsule_button_pressed"]
+[connection signal="pressed" from="Window/commit_button" to="." method="_on_commit_button_pressed"]

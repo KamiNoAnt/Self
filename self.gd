@@ -5,8 +5,8 @@ var KUGEL
 @onready var card_boxes: AnimatedSprite3D = $"../../camRotate/camStuck2/card/cardBoxes"
 
 
-var rotaSpeed = 0.004
-var scale_speed = 0.02
+var rotaSpeed = 0.5
+var scale_speed = 0.75
 
 const  kugel = preload("res://kugel.tscn")
 
@@ -24,7 +24,7 @@ const  kugel = preload("res://kugel.tscn")
 @onready var pop_up_settings: Node2D = $"../../pop_up_settings"
 
 func _process(delta: float) -> void:
-	cam_rotate.rotation.y += rotaSpeed
+	cam_rotate.rotation.y += rotaSpeed * delta
 	if Input.is_action_pressed("rotate_left"):
 		cam_rotate.rotation.y -= rotaSpeed * 2 * delta
 		
@@ -37,10 +37,10 @@ func _process(delta: float) -> void:
 		print(Counter.menge)
 		
 	if pc2.priority == 1 and tcg_overlay.scale > Vector2(1, 1):
-		tcg_overlay.scale = tcg_overlay.scale - Vector2(scale_speed, scale_speed)
+		tcg_overlay.scale = tcg_overlay.scale - Vector2(scale_speed, scale_speed) * delta
 		
 	elif pc1.priority == 1 and tcg_overlay.scale < Vector2(1.6, 1.6):
-		tcg_overlay.scale = tcg_overlay.scale + Vector2(scale_speed, scale_speed)
+		tcg_overlay.scale = tcg_overlay.scale + Vector2(scale_speed, scale_speed) * delta
 
 func _input(event):
 	if event.is_action_pressed("accept"):

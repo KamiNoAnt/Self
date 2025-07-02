@@ -1,9 +1,9 @@
 [gd_scene load_steps=5 format=3 uid="uid://dvaqth0in7oq3"]
 
 [ext_resource type="Material" uid="uid://cyaftlv456c5g" path="res://line_material.tres" id="1_fuohl"]
-[ext_resource type="VideoStream" uid="uid://c8iugis4qvwar" path="res://boxes_vid.ogv" id="1_o2otq"]
 [ext_resource type="Material" uid="uid://uxwu5nkqn5xt" path="res://box_material.tres" id="3_6ln16"]
 [ext_resource type="VideoStream" uid="uid://r8etfl0x87ty" path="res://lines_vid.ogv" id="3_qcrlb"]
+[ext_resource type="VideoStream" uid="uid://dj3pdwrsjwwbe" path="res://boxes_lesser.ogv" id="4_fuohl"]
 
 [node name="tcg_overlay" type="Control"]
 layout_mode = 3
@@ -35,6 +35,6 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 pivot_offset = Vector2(360, 640)
-stream = ExtResource("1_o2otq")
+stream = ExtResource("4_fuohl")
 expand = true
 loop = true

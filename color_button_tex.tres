@@ -1,0 +1,8 @@
+[gd_resource type="GradientTexture2D" load_steps=2 format=3 uid="uid://x1ro4c0oir51"]
+
+[ext_resource type="Gradient" uid="uid://bh368gdgsprp7" path="res://color_button_grad.tres" id="1_81c6o"]
+
+[resource]
+gradient = ExtResource("1_81c6o")
+width = 256
+height = 32

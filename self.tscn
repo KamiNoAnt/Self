@@ -1,4 +1,4 @@
-[gd_scene load_steps=617 format=3 uid="uid://cq6ykboxrb5ee"]
+[gd_scene load_steps=628 format=3 uid="uid://cq6ykboxrb5ee"]
 
 [ext_resource type="Script" uid="uid://cf5umirvgyha2" path="res://self.gd" id="1_1w2h5"]
 [ext_resource type="Script" uid="uid://bns1eimouvfim" path="res://update.gd" id="1_l8ouh"]
@@ -9,6 +9,12 @@
 [ext_resource type="Script" uid="uid://b2wwms7ma0t8k" path="res://ban_mesh.gd" id="4_mciwl"]
 [ext_resource type="Script" uid="uid://d3b4hne752uhs" path="res://usb_mesh.gd" id="5_y1ba4"]
 [ext_resource type="PackedScene" uid="uid://fftl0wsif3j6" path="res://pop_up_settings.tscn" id="11_4xtgn"]
+[ext_resource type="Script" uid="uid://d15nobs3uuxeb" path="res://addons/postfx/nodes/PostFX.gd" id="11_s6ge6"]
+[ext_resource type="Script" uid="uid://bvbw3ejkm2bck" path="res://addons/postfx/scripts/FXBase.gd" id="12_k0fcr"]
+[ext_resource type="Script" uid="uid://bhd63cqvtdx65" path="res://addons/postfx/effects/AsciiFX.gd" id="13_v68ed"]
+[ext_resource type="Script" uid="uid://2d4v81y7bb77" path="res://addons/postfx/effects/CRTFX.gd" id="14_jhpth"]
+[ext_resource type="Script" uid="uid://bxsk7uywkd145" path="res://addons/postfx/effects/ChromaticAberrationFX.gd" id="15_ywxss"]
+[ext_resource type="Script" uid="uid://cqqc7s7kp8uem" path="res://addons/postfx/effects/VignetteFX.gd" id="16_7nl00"]
 [ext_resource type="PackedScene" uid="uid://dvaqth0in7oq3" path="res://tcg_overlay.tscn" id="612_aw13x"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_1w2h5"]
@@ -3665,6 +3671,75 @@ animations = [{
 "speed": 30.0
 }]
 
+[sub_resource type="Resource" id="Resource_ouhtr"]
+script = ExtResource("13_v68ed")
+size = 0.75
+enabled = true
+metadata/_custom_type_script = "uid://bhd63cqvtdx65"
+
+[sub_resource type="Resource" id="Resource_5vulc"]
+script = ExtResource("14_jhpth")
+resolution = Vector2(540, 960)
+brightness = 1.2
+scanlines_opacity = 0.4
+scanlines_width = 0.25
+grille_opacity = 0.3
+roll = true
+roll_speed = 4.0
+roll_size = 25.0
+roll_variation = 2.5
+distort_intensity = 0.05
+aberration = 0.02
+noise_opacity = 0.2
+noise_speed = 2.5
+static_noise_intensity = 0.06
+pixelate = true
+discolor = true
+warp_amount = 2.0
+clip_warp = false
+vignette_intensity = 0.5
+vignette_opacity = 0.5
+enabled = true
+metadata/_custom_type_script = "uid://2d4v81y7bb77"
+
+[sub_resource type="Resource" id="Resource_71xqn"]
+script = ExtResource("15_ywxss")
+strength = 3.0
+enabled = true
+metadata/_custom_type_script = "uid://bxsk7uywkd145"
+
+[sub_resource type="Resource" id="Resource_aw443"]
+script = ExtResource("16_7nl00")
+intensity = 1.5
+color = Color(0, 0, 0, 1)
+enabled = true
+metadata/_custom_type_script = "uid://cqqc7s7kp8uem"
+
+[sub_resource type="Resource" id="Resource_k0fcr"]
+script = ExtResource("14_jhpth")
+resolution = Vector2(135, 240)
+brightness = 1.0
+scanlines_opacity = 0.0
+scanlines_width = 0.0
+grille_opacity = 0.0
+roll = false
+roll_speed = 0.0
+roll_size = 0.0
+roll_variation = 0.1
+distort_intensity = 0.0
+aberration = 0.0
+noise_opacity = 0.0
+noise_speed = 0.0
+static_noise_intensity = 0.0
+pixelate = true
+discolor = false
+warp_amount = 0.0
+clip_warp = false
+vignette_intensity = 0.0
+vignette_opacity = 0.0
+enabled = true
+metadata/_custom_type_script = "uid://2d4v81y7bb77"
+
 [node name="self" type="Node3D"]
 script = ExtResource("1_l8ouh")
 
@@ -3761,3 +3836,9 @@ outline_size = 0
 [node name="tcg_overlay" parent="CanvasLayer" instance=ExtResource("612_aw13x")]
 scale = Vector2(1.6, 1.6)
 pivot_offset = Vector2(320, 640)
+
+[node name="PostFX" type="CanvasLayer" parent="."]
+script = ExtResource("11_s6ge6")
+effects = Array[ExtResource("12_k0fcr")]([SubResource("Resource_ouhtr"), SubResource("Resource_5vulc"), SubResource("Resource_71xqn"), SubResource("Resource_aw443"), SubResource("Resource_k0fcr")])
+always_update = true
+metadata/_custom_type_script = "uid://d15nobs3uuxeb"
