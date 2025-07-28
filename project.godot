@@ -24,8 +24,10 @@ Counter="*res://counter.gd"
 
 [display]
 
-window/size/viewport_width=720
-window/size/viewport_height=1280
+window/size/viewport_width=1080
+window/size/viewport_height=1920
+window/size/mode=2
+window/size/initial_screen=1
 window/subwindows/embed_subwindows=false
 window/per_pixel_transparency/allowed=true
 

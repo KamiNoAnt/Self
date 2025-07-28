@@ -4,5 +4,5 @@
 
 [resource]
 gradient = ExtResource("1_rvnek")
-fill_from = Vector2(0.564103, 1)
-fill_to = Vector2(0.457265, 0)
+fill_from = Vector2(0.487179, 0)
+fill_to = Vector2(0.529915, 0.619658)

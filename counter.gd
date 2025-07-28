@@ -8,6 +8,8 @@ var mengeUsb = 0
 
 var start_anim = false
 
+var username
+
 #var r = 0.5
 #var g = 0.1
 #var b = 0.1

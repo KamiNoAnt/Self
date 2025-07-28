@@ -1,57 +1,39 @@
-[gd_scene load_steps=7 format=3 uid="uid://l620gffixa01"]
+[gd_scene load_steps=4 format=3 uid="uid://l620gffixa01"]
 
-[ext_resource type="FontFile" uid="uid://c6ip2bgm0bhyp" path="res://PatuaOne-Regular.ttf" id="1_ncxyx"]
 [ext_resource type="Script" uid="uid://3cumul6r6uh4" path="res://start_screen.gd" id="1_pevhg"]
-[ext_resource type="FastNoiseLite" uid="uid://bwx4ko3j2i1ke" path="res://start_noise.tres" id="2_afy8x"]
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_afy8x"]
-corner_radius_top_left = 2000
-corner_radius_top_right = 2000
-corner_radius_bottom_right = 2000
-corner_radius_bottom_left = 2000
-
-[sub_resource type="Gradient" id="Gradient_pevhg"]
-colors = PackedColorArray(0.344969, 0.125751, 0.599931, 1, 0.904798, 0.411417, 0.421041, 1)
-
-[sub_resource type="NoiseTexture2D" id="NoiseTexture2D_k1na2"]
-color_ramp = SubResource("Gradient_pevhg")
-noise = ExtResource("2_afy8x")
+[ext_resource type="VideoStream" uid="uid://bmttrbtutrlpn" path="res://starsLow.ogv" id="2_afy8x"]
+[ext_resource type="FontFile" uid="uid://byqedh84v5j8" path="res://SpaceMono-Bold.ttf" id="3_afy8x"]
 
 [node name="start_screen" type="Control"]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
+offset_right = -360.0
+offset_bottom = -640.0
 grow_horizontal = 2
 grow_vertical = 2
 mouse_filter = 2
 script = ExtResource("1_pevhg")
 
 [node name="PanelContainer" type="PanelContainer" parent="."]
-clip_children = 1
 layout_mode = 1
 anchors_preset = -1
-anchor_left = -0.889
-anchor_top = -0.281
-anchor_right = 1.889
-anchor_bottom = 1.281
-offset_left = 0.0800171
-offset_top = -0.319977
-offset_right = -0.0800781
-offset_bottom = 0.319946
-grow_horizontal = 2
-grow_vertical = 2
-pivot_offset = Vector2(1000, 1000)
-theme_override_styles/panel = SubResource("StyleBoxFlat_afy8x")
+anchor_right = 2.0
+anchor_bottom = 2.0
+offset_right = -7.20001
+offset_bottom = -12.8
+pivot_offset = Vector2(360, 640)
 
-[node name="TextureRect2" type="TextureRect" parent="PanelContainer"]
-z_as_relative = false
+[node name="VideoStreamPlayer" type="VideoStreamPlayer" parent="PanelContainer"]
 layout_mode = 2
-texture = SubResource("NoiseTexture2D_k1na2")
+stream = ExtResource("2_afy8x")
+autoplay = true
+loop = true
 
 [node name="start_button" type="Button" parent="PanelContainer"]
 layout_mode = 2
-theme_override_fonts/font = ExtResource("1_ncxyx")
+theme_override_fonts/font = ExtResource("3_afy8x")
 theme_override_font_sizes/font_size = 140
 text = "Press"
 flat = true

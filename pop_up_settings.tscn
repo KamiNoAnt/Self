@@ -3,26 +3,24 @@
 [ext_resource type="Script" uid="uid://qg32bkdskrbw" path="res://pop_up_settings.gd" id="1_11thn"]
 [ext_resource type="Script" uid="uid://mccf4vgk60ec" path="res://scroll_container.gd" id="2_dws5e"]
 [ext_resource type="Texture2D" uid="uid://bvuqvvunxmcqi" path="res://bg_texture.tres" id="2_k5q8d"]
+[ext_resource type="Texture2D" uid="uid://boxqb66tdkxyb" path="res://objects2.png" id="3_j61b0"]
 [ext_resource type="StyleBox" uid="uid://2bsu1rclupfn" path="res://normal_button.tres" id="3_r0xuj"]
+[ext_resource type="Texture2D" uid="uid://cag7ii1n6frey" path="res://palette2.png" id="3_rjf5p"]
 [ext_resource type="StyleBox" uid="uid://terfepg63xlv" path="res://button_color.tres" id="4_hdpka"]
+[ext_resource type="Texture2D" uid="uid://b4qavatx3myvx" path="res://vfx2.png" id="4_rjf5p"]
 [ext_resource type="Texture2D" uid="uid://x1ro4c0oir51" path="res://color_button_tex.tres" id="5_rw0tc"]
-[ext_resource type="Texture2D" uid="uid://b2ynxpen81m4o" path="res://color_palette.png" id="5_uch0a"]
-[ext_resource type="Texture2D" uid="uid://1l54qql86k0e" path="res://objects.png" id="6_uch0a"]
-[ext_resource type="FontFile" uid="uid://dqjcdgg5dagml" path="res://Rubik-Bold.ttf" id="7_17gyj"]
-[ext_resource type="Texture2D" uid="uid://d0v7jxpmcv6vb" path="res://vfx.png" id="7_nisic"]
+[ext_resource type="FontFile" uid="uid://c10aw3mh5ween" path="res://SpaceMono-Regular.ttf" id="6_rjf5p"]
 [ext_resource type="Theme" uid="uid://df76nby0ft83w" path="res://font_theme.tres" id="7_uch0a"]
 [ext_resource type="StyleBox" uid="uid://b77a3ta4tw086" path="res://commit_button.tres" id="8_g3qv0"]
 [ext_resource type="PackedScene" uid="uid://l620gffixa01" path="res://start_screen.tscn" id="9_g3qv0"]
+[ext_resource type="FontFile" uid="uid://byqedh84v5j8" path="res://SpaceMono-Bold.ttf" id="9_rjf5p"]
 [ext_resource type="StyleBox" uid="uid://cnfudvtwrk1ir" path="res://vfx_button.tres" id="13_j61b0"]
 
-[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_jsytf"]
-
-[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_r0kai"]
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_11thn"]
-bg_color = Color(0.85098, 0.137255, 0.243137, 1)
-
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_nisic"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_rjf5p"]
+corner_radius_bottom_right = 20
+corner_radius_bottom_left = 20
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_uch0a"]
 corner_radius_top_left = 20
@@ -39,6 +37,14 @@ corner_radius_bottom_left = 20
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_nisic"]
 bg_color = Color(1, 1, 1, 1)
 skew = Vector2(0.25, 0)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_5ctuf"]
+bg_color = Color(0.273873, 0.273873, 0.273873, 1)
+skew = Vector2(0.25, 0)
+corner_radius_top_left = 20
+corner_radius_top_right = 20
+corner_radius_bottom_right = 20
+corner_radius_bottom_left = 20
 
 [node name="pop_up_settings" type="Node2D"]
 script = ExtResource("1_11thn")
@@ -66,33 +72,6 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 texture = ExtResource("2_k5q8d")
-metadata/_edit_lock_ = true
-
-[node name="screenshot_button" type="Button" parent="Window"]
-visible = false
-offset_left = 204.0
-offset_top = 1197.0
-offset_right = 337.0
-offset_bottom = 1244.0
-theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
-theme_override_colors/font_color = Color(0, 0, 0, 1)
-theme_override_colors/font_focus_color = Color(0, 0, 0, 1)
-theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
-theme_override_styles/focus = SubResource("StyleBoxEmpty_jsytf")
-theme_override_styles/hover = ExtResource("3_r0xuj")
-theme_override_styles/pressed = ExtResource("4_hdpka")
-theme_override_styles/normal = ExtResource("3_r0xuj")
-text = "SCREENSHOT"
-
-[node name="reset_button" type="Button" parent="Window"]
-visible = false
-offset_left = 433.0
-offset_top = 1219.0
-offset_right = 492.0
-offset_bottom = 1242.0
-theme_override_styles/focus = SubResource("StyleBoxEmpty_r0kai")
-theme_override_styles/normal = SubResource("StyleBoxFlat_11thn")
-text = "Reset"
 
 [node name="switch_buttons" type="Control" parent="Window"]
 layout_mode = 3
@@ -109,51 +88,66 @@ grow_vertical = 0
 [node name="color" type="Button" parent="Window/switch_buttons"]
 layout_mode = 1
 anchors_preset = -1
-anchor_right = 0.263
-anchor_bottom = 0.982
-offset_left = 5.41
-offset_top = 11.51
-offset_right = 232.668
-offset_bottom = 237.57
+anchor_left = -0.016
+anchor_top = 0.071
+anchor_right = 0.252
+anchor_bottom = 0.889
+offset_left = 0.143999
+offset_top = -0.0700092
+offset_right = 309.232
+offset_bottom = 253.87
 scale = Vector2(0.354, 0.354)
 theme_override_styles/focus = SubResource("StyleBoxEmpty_nisic")
 text = "
 "
-icon = ExtResource("5_uch0a")
 flat = true
 icon_alignment = 1
+
+[node name="Palette2" type="Sprite2D" parent="Window/switch_buttons/color"]
+position = Vector2(225.989, 210.424)
+scale = Vector2(0.35, 0.35)
+texture = ExtResource("3_rjf5p")
 
 [node name="objects" type="Button" parent="Window/switch_buttons"]
 layout_mode = 1
 anchors_preset = -1
-anchor_left = 0.369
-anchor_right = 0.632
-anchor_bottom = 0.982
-offset_left = 5.27403
-offset_top = 11.82
-offset_right = 253.532
-offset_bottom = 213.88
+anchor_left = 0.35
+anchor_right = 0.652
+anchor_bottom = 0.891
+offset_left = 0.100006
+offset_top = 12.0
+offset_right = 314.632
+offset_bottom = 229.53
 scale = Vector2(0.378, 0.378)
 theme_override_styles/focus = SubResource("StyleBoxEmpty_nisic")
-icon = ExtResource("6_uch0a")
 flat = true
 icon_alignment = 1
+
+[node name="Objects2" type="Sprite2D" parent="Window/switch_buttons/objects"]
+position = Vector2(240.741, 185.662)
+scale = Vector2(0.35, 0.35)
+texture = ExtResource("3_j61b0")
 
 [node name="vfx" type="Button" parent="Window/switch_buttons"]
 layout_mode = 1
 anchors_preset = -1
 anchor_left = 0.73
-anchor_right = 0.994
+anchor_top = 0.047
+anchor_right = 1.027
 anchor_bottom = 0.982
-offset_left = 13.915
-offset_top = 8.455
-offset_right = 163.579
-offset_bottom = 156.515
+offset_left = 14.18
+offset_top = 0.00999403
+offset_right = 179.882
+offset_bottom = 156.06
 scale = Vector2(0.492, 0.492)
 theme_override_styles/focus = SubResource("StyleBoxEmpty_nisic")
-icon = ExtResource("7_nisic")
 flat = true
 icon_alignment = 1
+
+[node name="Vfx2" type="Sprite2D" parent="Window/switch_buttons/vfx"]
+position = Vector2(197.693, 155.58)
+scale = Vector2(0.3, 0.3)
+texture = ExtResource("4_rjf5p")
 
 [node name="ColorRect" type="ColorRect" parent="Window/switch_buttons"]
 layout_mode = 0
@@ -216,160 +210,208 @@ layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
+offset_top = 1.52588e-05
 offset_bottom = -35.0
 grow_horizontal = 2
 grow_vertical = 2
+theme_override_fonts/font = ExtResource("6_rjf5p")
 flat = true
+alignment = 0
 
 [node name="c2" type="Button" parent="Window/screen1/color_button"]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
+offset_top = 1.52588e-05
 offset_bottom = -35.0
 grow_horizontal = 2
 grow_vertical = 2
+theme_override_fonts/font = ExtResource("6_rjf5p")
 flat = true
+alignment = 0
 
 [node name="c3" type="Button" parent="Window/screen1/color_button"]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
+offset_top = 1.52588e-05
 offset_bottom = -35.0
 grow_horizontal = 2
 grow_vertical = 2
+theme_override_fonts/font = ExtResource("6_rjf5p")
 flat = true
+alignment = 0
 
 [node name="c4" type="Button" parent="Window/screen1/color_button"]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
+offset_top = 1.52588e-05
 offset_bottom = -35.0
 grow_horizontal = 2
 grow_vertical = 2
+theme_override_fonts/font = ExtResource("6_rjf5p")
 flat = true
+alignment = 0
 
 [node name="c5" type="Button" parent="Window/screen1/color_button"]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
+offset_top = 1.52588e-05
 offset_bottom = -35.0
 grow_horizontal = 2
 grow_vertical = 2
+theme_override_fonts/font = ExtResource("6_rjf5p")
 flat = true
+alignment = 0
 
 [node name="c6" type="Button" parent="Window/screen1/color_button"]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
+offset_top = 1.52588e-05
 offset_bottom = -35.0
 grow_horizontal = 2
 grow_vertical = 2
+theme_override_fonts/font = ExtResource("6_rjf5p")
 flat = true
+alignment = 0
 
 [node name="c7" type="Button" parent="Window/screen1/color_button"]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
+offset_top = 1.52588e-05
 offset_bottom = -35.0
 grow_horizontal = 2
 grow_vertical = 2
+theme_override_fonts/font = ExtResource("6_rjf5p")
 flat = true
+alignment = 0
 
 [node name="c8" type="Button" parent="Window/screen1/color_button"]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
+offset_top = 1.52588e-05
 offset_bottom = -35.0
 grow_horizontal = 2
 grow_vertical = 2
+theme_override_fonts/font = ExtResource("6_rjf5p")
 flat = true
+alignment = 0
 
 [node name="c9" type="Button" parent="Window/screen1/color_button"]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
+offset_top = 1.52588e-05
 offset_bottom = -35.0
 grow_horizontal = 2
 grow_vertical = 2
+theme_override_fonts/font = ExtResource("6_rjf5p")
 flat = true
+alignment = 0
 
 [node name="c10" type="Button" parent="Window/screen1/color_button"]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
+offset_top = 1.52588e-05
 offset_bottom = -35.0
 grow_horizontal = 2
 grow_vertical = 2
+theme_override_fonts/font = ExtResource("6_rjf5p")
 flat = true
+alignment = 0
 
 [node name="c11" type="Button" parent="Window/screen1/color_button"]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
+offset_top = 1.52588e-05
 offset_bottom = -35.0
 grow_horizontal = 2
 grow_vertical = 2
+theme_override_fonts/font = ExtResource("6_rjf5p")
 flat = true
+alignment = 0
 
 [node name="c12" type="Button" parent="Window/screen1/color_button"]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
+offset_top = 1.52588e-05
 offset_bottom = -35.0
 grow_horizontal = 2
 grow_vertical = 2
+theme_override_fonts/font = ExtResource("6_rjf5p")
 flat = true
+alignment = 0
 
 [node name="c13" type="Button" parent="Window/screen1/color_button"]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
+offset_top = 1.52588e-05
 offset_bottom = -35.0
 grow_horizontal = 2
 grow_vertical = 2
+theme_override_fonts/font = ExtResource("6_rjf5p")
 flat = true
+alignment = 0
 
 [node name="c14" type="Button" parent="Window/screen1/color_button"]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
+offset_top = 1.52588e-05
 offset_bottom = -35.0
 grow_horizontal = 2
 grow_vertical = 2
+theme_override_fonts/font = ExtResource("6_rjf5p")
 flat = true
+alignment = 0
 
 [node name="c15" type="Button" parent="Window/screen1/color_button"]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
+offset_top = 1.52588e-05
 offset_bottom = -35.0
 grow_horizontal = 2
 grow_vertical = 2
+theme_override_fonts/font = ExtResource("6_rjf5p")
 flat = true
+alignment = 0
 
 [node name="c16" type="Button" parent="Window/screen1/color_button"]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
+offset_top = 1.52588e-05
 offset_bottom = -35.0
 grow_horizontal = 2
 grow_vertical = 2
+theme_override_fonts/font = ExtResource("6_rjf5p")
 flat = true
+alignment = 0
 
 [node name="color_button2" type="Button" parent="Window/screen1"]
 z_index = 2
@@ -384,6 +426,7 @@ offset_top = -0.280014
 offset_right = -0.240051
 offset_bottom = 0.359985
 grow_horizontal = 2
+theme_override_fonts/font = ExtResource("9_rjf5p")
 text = "COLOR"
 icon = ExtResource("5_rw0tc")
 flat = true
@@ -402,7 +445,7 @@ offset_bottom = -239.0
 grow_horizontal = 2
 grow_vertical = 2
 mouse_filter = 2
-theme_override_styles/panel = SubResource("StyleBoxFlat_uch0a")
+theme_override_styles/panel = SubResource("StyleBoxFlat_rjf5p")
 
 [node name="ColorRect" type="ColorRect" parent="Window/screen1/color_background"]
 layout_mode = 2
@@ -428,7 +471,7 @@ theme_override_styles/panel = SubResource("StyleBoxFlat_uch0a")
 [node name="ColorRect" type="ColorRect" parent="Window/screen1/color_background2"]
 layout_mode = 2
 mouse_filter = 2
-color = Color(0.559206, 0.49621, 0.708952, 1)
+color = Color(0.635979, 0.637296, 0.726811, 1)
 
 [node name="RichTextLabel" type="RichTextLabel" parent="Window/screen1"]
 layout_mode = 1
@@ -441,10 +484,10 @@ offset_left = 0.199997
 offset_top = 0.0799999
 offset_right = -0.200012
 offset_bottom = 0.0400085
-theme_override_fonts/normal_font = ExtResource("7_17gyj")
+theme_override_constants/line_separation = -32
+theme_override_fonts/normal_font = ExtResource("9_rjf5p")
 theme_override_font_sizes/normal_font_size = 60
 text = "1. Choose a color palette"
-horizontal_alignment = 1
 
 [node name="screen2" type="Control" parent="Window"]
 visible = false
@@ -932,10 +975,10 @@ offset_left = 0.199997
 offset_top = 0.0799999
 offset_right = -0.200012
 offset_bottom = 0.0400085
-theme_override_fonts/normal_font = ExtResource("7_17gyj")
+theme_override_constants/line_separation = -32
+theme_override_fonts/normal_font = ExtResource("9_rjf5p")
 theme_override_font_sizes/normal_font_size = 60
 text = "2. Add some objects"
-horizontal_alignment = 1
 
 [node name="screen3" type="Control" parent="Window"]
 visible = false
@@ -958,13 +1001,13 @@ offset_left = 0.0799942
 offset_top = 45.2399
 offset_right = 0.159973
 offset_bottom = 45.48
-theme_override_fonts/font = ExtResource("7_17gyj")
+theme_override_fonts/font = ExtResource("9_rjf5p")
 theme_override_font_sizes/font_size = 60
 theme_override_styles/focus = SubResource("StyleBoxEmpty_g3qv0")
 theme_override_styles/hover = ExtResource("8_g3qv0")
 theme_override_styles/pressed = ExtResource("8_g3qv0")
 theme_override_styles/normal = ExtResource("8_g3qv0")
-text = "THATS ME"
+text = "CONTINUE"
 
 [node name="ColorRect" type="ColorRect" parent="Window/screen3"]
 layout_mode = 0
@@ -980,14 +1023,14 @@ anchor_left = 0.165
 anchor_top = 0.014
 anchor_right = 0.835
 anchor_bottom = 0.132
-offset_left = 0.199997
+offset_left = -0.975006
 offset_top = 0.0799999
-offset_right = -0.200012
+offset_right = -1.375
 offset_bottom = 0.0400085
-theme_override_fonts/normal_font = ExtResource("7_17gyj")
+theme_override_constants/line_separation = -32
+theme_override_fonts/normal_font = ExtResource("9_rjf5p")
 theme_override_font_sizes/normal_font_size = 60
 text = "3. What's your mood?"
-horizontal_alignment = 1
 vertical_alignment = 1
 
 [node name="RichTextLabel2" type="RichTextLabel" parent="Window/screen3"]
@@ -998,12 +1041,12 @@ anchor_top = 0.014
 anchor_right = 0.835
 anchor_bottom = 0.132
 offset_left = 0.199997
-offset_top = 774.08
+offset_top = 763.08
 offset_right = -0.200012
 offset_bottom = 653.04
-theme_override_fonts/normal_font = ExtResource("7_17gyj")
+theme_override_fonts/normal_font = ExtResource("6_rjf5p")
 theme_override_font_sizes/normal_font_size = 20
-text = "Is this you?"
+text = "Ready for the last step?"
 horizontal_alignment = 1
 vertical_alignment = 1
 
@@ -1016,15 +1059,15 @@ anchor_right = 0.835
 anchor_bottom = 0.132
 offset_left = 134.2
 offset_top = 202.08
-offset_right = 138.8
+offset_right = 152.8
 offset_bottom = 546.04
-theme_override_constants/line_separation = 48
-theme_override_fonts/normal_font = ExtResource("7_17gyj")
+theme_override_constants/line_separation = 34
+theme_override_fonts/normal_font = ExtResource("6_rjf5p")
 theme_override_font_sizes/normal_font_size = 40
-text = "           cryptic
-        nostalgic
-     dizzy
-   focused
+text = "    cryptic
+   nostalgic
+  dizzy
+ focused
 weak"
 fit_content = true
 
@@ -1093,12 +1136,82 @@ theme_override_styles/pressed = ExtResource("13_j61b0")
 theme_override_styles/normal = SubResource("StyleBoxFlat_nisic")
 toggle_mode = true
 
+[node name="name_screen" type="Control" parent="Window"]
+visible = false
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="RichTextLabel" type="RichTextLabel" parent="Window/name_screen"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.165
+anchor_top = 0.014
+anchor_right = 0.835
+anchor_bottom = 0.132
+offset_left = -0.975006
+offset_top = 0.0799999
+offset_right = -1.375
+offset_bottom = 0.0400085
+theme_override_constants/line_separation = -32
+theme_override_fonts/normal_font = ExtResource("9_rjf5p")
+theme_override_font_sizes/normal_font_size = 60
+text = "4. What are you called?"
+vertical_alignment = 1
+
+[node name="LineEdit" type="LineEdit" parent="Window/name_screen"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.007
+anchor_top = 0.314
+anchor_right = 0.993
+anchor_bottom = 0.544
+offset_left = 193.96
+offset_top = 12.08
+offset_right = -193.96
+offset_bottom = -155.32
+grow_horizontal = 2
+grow_vertical = 2
+pivot_offset = Vector2(140, 46)
+theme_override_colors/caret_color = Color(0, 0, 0, 0)
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_fonts/font = ExtResource("9_rjf5p")
+theme_override_font_sizes/font_size = 60
+placeholder_text = "<name>"
+alignment = 1
+max_length = 10
+keep_editing_on_text_submit = true
+expand_to_text_length = true
+flat = true
+
+[node name="finish_button" type="Button" parent="Window/name_screen"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.136
+anchor_top = 0.5
+anchor_right = 0.897
+anchor_bottom = 0.613
+offset_left = 0.0799942
+offset_top = -6.0
+offset_right = 0.159973
+offset_bottom = -0.639893
+theme_override_fonts/font = ExtResource("9_rjf5p")
+theme_override_font_sizes/font_size = 60
+theme_override_styles/focus = SubResource("StyleBoxEmpty_g3qv0")
+theme_override_styles/disabled = SubResource("StyleBoxFlat_5ctuf")
+theme_override_styles/hover = ExtResource("8_g3qv0")
+theme_override_styles/pressed = ExtResource("8_g3qv0")
+theme_override_styles/normal = ExtResource("8_g3qv0")
+disabled = true
+text = "COMMIT"
+
 [node name="CanvasLayer" type="CanvasLayer" parent="Window"]
 
 [node name="start_screen" parent="Window/CanvasLayer" instance=ExtResource("9_g3qv0")]
 
-[connection signal="button_up" from="Window/screenshot_button" to="." method="_on_screenshot_button_button_up"]
-[connection signal="button_up" from="Window/reset_button" to="." method="_on_reset_button_button_up"]
 [connection signal="pressed" from="Window/switch_buttons/color" to="." method="_on_color_pressed"]
 [connection signal="pressed" from="Window/switch_buttons/objects" to="." method="_on_objects_pressed"]
 [connection signal="pressed" from="Window/switch_buttons/vfx" to="." method="_on_vfx_pressed"]
@@ -1130,3 +1243,5 @@ toggle_mode = true
 [connection signal="toggled" from="Window/screen3/Button3" to="." method="_on_button_3_toggled"]
 [connection signal="toggled" from="Window/screen3/Button4" to="." method="_on_button_4_toggled"]
 [connection signal="toggled" from="Window/screen3/Button5" to="." method="_on_button_5_toggled"]
+[connection signal="text_changed" from="Window/name_screen/LineEdit" to="." method="_on_line_edit_text_changed"]
+[connection signal="pressed" from="Window/name_screen/finish_button" to="." method="_on_finish_button_pressed"]

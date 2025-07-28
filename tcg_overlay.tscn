@@ -1,9 +1,11 @@
-[gd_scene load_steps=5 format=3 uid="uid://dvaqth0in7oq3"]
+[gd_scene load_steps=7 format=3 uid="uid://dvaqth0in7oq3"]
 
 [ext_resource type="Material" uid="uid://cyaftlv456c5g" path="res://line_material.tres" id="1_fuohl"]
 [ext_resource type="Material" uid="uid://uxwu5nkqn5xt" path="res://box_material.tres" id="3_6ln16"]
 [ext_resource type="VideoStream" uid="uid://r8etfl0x87ty" path="res://lines_vid.ogv" id="3_qcrlb"]
 [ext_resource type="VideoStream" uid="uid://dj3pdwrsjwwbe" path="res://boxes_lesser.ogv" id="4_fuohl"]
+[ext_resource type="FontFile" uid="uid://byqedh84v5j8" path="res://SpaceMono-Bold.ttf" id="5_6ln16"]
+[ext_resource type="StyleBox" uid="uid://dymo7n2pt5slp" path="res://name_box.tres" id="5_lkal2"]
 
 [node name="tcg_overlay" type="Control"]
 layout_mode = 3
@@ -38,3 +40,34 @@ pivot_offset = Vector2(360, 640)
 stream = ExtResource("4_fuohl")
 expand = true
 loop = true
+
+[node name="PanelContainer" type="PanelContainer" parent="."]
+visible = false
+clip_children = 2
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.128
+anchor_top = -0.156
+anchor_right = 0.876
+anchor_bottom = -0.078
+offset_left = -0.240005
+offset_top = -0.47998
+offset_right = -0.0800781
+offset_bottom = -0.23999
+theme_override_styles/panel = ExtResource("5_lkal2")
+
+[node name="ColorRect" type="ColorRect" parent="PanelContainer"]
+layout_mode = 2
+
+[node name="RichTextLabel" type="RichTextLabel" parent="PanelContainer/ColorRect"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/default_color = Color(1, 1, 1, 1)
+theme_override_fonts/normal_font = ExtResource("5_6ln16")
+theme_override_font_sizes/normal_font_size = 80
+horizontal_alignment = 1
+vertical_alignment = 1

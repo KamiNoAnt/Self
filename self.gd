@@ -1,12 +1,10 @@
 extends Node3D
 var KUGEL
 @onready var meshes: Node3D = $".."
-@onready var card_lines: AnimatedSprite3D = $"../../camRotate/camStuck2/card/cardLines"
-@onready var card_boxes: AnimatedSprite3D = $"../../camRotate/camStuck2/card/cardBoxes"
-
 
 var rotaSpeed = 0.5
-var scale_speed = 0.75
+var scale_speed = 1.5
+var move_speed = 600
 
 const  kugel = preload("res://kugel.tscn")
 
@@ -20,8 +18,12 @@ const  kugel = preload("res://kugel.tscn")
 @onready var pc2: PhantomCamera3D = $"../../PhantomCamera3D2"
 
 @onready var tcg_overlay: Control = $"../../CanvasLayer/tcg_overlay"
+var name_box
 
 @onready var pop_up_settings: Node2D = $"../../pop_up_settings"
+
+func _ready() -> void:
+	name_box = tcg_overlay.get_child(2)
 
 func _process(delta: float) -> void:
 	cam_rotate.rotation.y += rotaSpeed * delta
@@ -39,8 +41,14 @@ func _process(delta: float) -> void:
 	if pc2.priority == 1 and tcg_overlay.scale > Vector2(1, 1):
 		tcg_overlay.scale = tcg_overlay.scale - Vector2(scale_speed, scale_speed) * delta
 		
-	elif pc1.priority == 1 and tcg_overlay.scale < Vector2(1.6, 1.6):
-		tcg_overlay.scale = tcg_overlay.scale + Vector2(scale_speed, scale_speed) * delta
+	elif pc1.priority == 1 and tcg_overlay.scale < Vector2(2.5, 2.5):
+		tcg_overlay.scale = tcg_overlay.scale + Vector2(scale_speed, scale_speed) * 2 * delta
+		
+	if tcg_overlay.scale <= Vector2(1, 1) and name_box.position.y <= 30:
+		name_box.position += Vector2(0, move_speed) * delta
+	
+	elif tcg_overlay.scale >= Vector2(1, 1) and name_box.position.y >= -300:
+		name_box.position -= Vector2(0, move_speed) * delta
 
 func _input(event):
 	if event.is_action_pressed("accept"):
@@ -123,14 +131,3 @@ func take_screenshot():
 	var sshot = get_viewport().get_texture().get_image()
 	#sshot.resize(3, 4, Image.INTERPOLATE_TRILINEAR)
 	sshot.save_png("user://self_screenshots/screenshot " + timestamp + ".png")
-	
-func tcg_stop():
-	await get_tree().create_timer(0.5).timeout
-	card_lines.stop()
-	card_boxes.stop()
-	
-func tcg_start():
-	card_lines.frame = 0
-	card_lines.play()
-	card_boxes.frame = 0
-	card_boxes.play()
