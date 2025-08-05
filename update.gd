@@ -1,6 +1,15 @@
 extends Node3D
 @onready var meshes: Node3D = $meshes
 @onready var self_mesh: Node3D = $meshes/selfMesh
+@onready var bad_mesh: Node3D = $meshes/badMesh
+@onready var ban_mesh: Node3D = $meshes/banMesh
+@onready var usb_mesh: Node3D = $meshes/usbMesh
+@onready var katana_mesh: Node3D = $meshes/katanaMesh
+@onready var controller_mesh: Node3D = $meshes/controllerMesh
+@onready var plane_mesh: Node3D = $meshes/planeMesh
+@onready var cross_mesh: Node3D = $meshes/crossMesh
+@onready var car_mesh: Node3D = $meshes/carMesh
+
 
 var pos
 var posRangeXZ = 4
@@ -58,9 +67,40 @@ func _update():
 				
 				height = randf_range(0.2, 4) * 1.0
 				m.mesh.height = height
-			
+				
 			sca = randf_range(0.2, 0.6)
+				
 			m.scale = Vector3(1, 1, 1) * sca
+			
+			if c == bad_mesh:
+				sca = randf_range(0.2, 0.6)
+				var bad_sca = sca / 2
+				m.scale = Vector3(1, 1, 1) * bad_sca
+			
+			if c == katana_mesh:
+				sca = randf_range(0.2, 0.6)
+				var katana_sca = sca * 3
+				m.scale = Vector3(1, 1, 1) * katana_sca
+				
+			if c == controller_mesh:
+				sca = randf_range(0.2, 0.6)
+				var controller_sca = sca * 3
+				m.scale = Vector3(1, 1, 1) * controller_sca
+				
+			if c == plane_mesh:
+				sca = randf_range(0.2, 0.6)
+				var plane_sca = sca / 3
+				m.scale = Vector3(1, 1, 1) * plane_sca
+				
+			if c == cross_mesh:
+				sca = randf_range(0.2, 0.6)
+				var cross_sca = sca * 3
+				m.scale = Vector3(1, 1, 1) * cross_sca
+				
+			if c == car_mesh:
+				sca = randf_range(0.2, 0.6)
+				var car_sca = sca / 6
+				m.scale = Vector3(1, 1, 1) * car_sca
 			
 			m.material_override.emission = Counter.paletten[Counter.palette].pick_random()
 		

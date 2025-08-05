@@ -505,9 +505,9 @@ layout_mode = 1
 anchors_preset = -1
 anchor_top = 0.169
 anchor_right = 1.0
-anchor_bottom = 0.67
-offset_top = -0.320023
-offset_bottom = -0.600037
+anchor_bottom = 0.567
+offset_top = 51.68
+offset_bottom = 38.24
 theme = ExtResource("7_uch0a")
 horizontal_scroll_mode = 2
 vertical_scroll_mode = 0
@@ -518,10 +518,10 @@ layout_mode = 2
 mouse_filter = 2
 theme_override_constants/h_separation = 30
 theme_override_constants/v_separation = 30
-columns = 12
+columns = 4
 
 [node name="spacer" type="Control" parent="Window/screen2/ScrollContainer/GridContainer"]
-custom_minimum_size = Vector2(10, 0)
+custom_minimum_size = Vector2(90, 0)
 layout_mode = 2
 
 [node name="badminton_button" type="Button" parent="Window/screen2/ScrollContainer/GridContainer"]
@@ -536,20 +536,6 @@ theme_override_styles/hover = ExtResource("3_r0xuj")
 theme_override_styles/pressed = ExtResource("4_hdpka")
 theme_override_styles/normal = ExtResource("3_r0xuj")
 text = "Badminton Bat"
-autowrap_mode = 2
-
-[node name="usb_button" type="Button" parent="Window/screen2/ScrollContainer/GridContainer"]
-custom_minimum_size = Vector2(140, 140)
-layout_mode = 2
-theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
-theme_override_colors/font_color = Color(0, 0, 0, 1)
-theme_override_colors/font_focus_color = Color(0, 0, 0, 1)
-theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
-theme_override_styles/focus = SubResource("StyleBoxEmpty_hdpka")
-theme_override_styles/hover = ExtResource("3_r0xuj")
-theme_override_styles/pressed = ExtResource("4_hdpka")
-theme_override_styles/normal = ExtResource("3_r0xuj")
-text = "USB"
 autowrap_mode = 2
 
 [node name="banana_button" type="Button" parent="Window/screen2/ScrollContainer/GridContainer"]
@@ -580,99 +566,55 @@ theme_override_styles/normal = ExtResource("3_r0xuj")
 text = "Capsule"
 autowrap_mode = 2
 
-[node name="Button5" type="Button" parent="Window/screen2/ScrollContainer/GridContainer"]
-custom_minimum_size = Vector2(140, 140)
-layout_mode = 2
-theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
-theme_override_colors/font_color = Color(0, 0, 0, 1)
-theme_override_colors/font_focus_color = Color(0, 0, 0, 1)
-theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
-theme_override_styles/focus = SubResource("StyleBoxEmpty_hdpka")
-theme_override_styles/hover = ExtResource("3_r0xuj")
-theme_override_styles/pressed = ExtResource("4_hdpka")
-theme_override_styles/normal = ExtResource("3_r0xuj")
-text = "[empty]"
-autowrap_mode = 2
-
-[node name="Button6" type="Button" parent="Window/screen2/ScrollContainer/GridContainer"]
-custom_minimum_size = Vector2(140, 140)
-layout_mode = 2
-theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
-theme_override_colors/font_color = Color(0, 0, 0, 1)
-theme_override_colors/font_focus_color = Color(0, 0, 0, 1)
-theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
-theme_override_styles/focus = SubResource("StyleBoxEmpty_hdpka")
-theme_override_styles/hover = ExtResource("3_r0xuj")
-theme_override_styles/pressed = ExtResource("4_hdpka")
-theme_override_styles/normal = ExtResource("3_r0xuj")
-text = "[empty]"
-autowrap_mode = 2
-
-[node name="Button7" type="Button" parent="Window/screen2/ScrollContainer/GridContainer"]
-custom_minimum_size = Vector2(140, 140)
-layout_mode = 2
-theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
-theme_override_colors/font_color = Color(0, 0, 0, 1)
-theme_override_colors/font_focus_color = Color(0, 0, 0, 1)
-theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
-theme_override_styles/focus = SubResource("StyleBoxEmpty_hdpka")
-theme_override_styles/hover = ExtResource("3_r0xuj")
-theme_override_styles/pressed = ExtResource("4_hdpka")
-theme_override_styles/normal = ExtResource("3_r0xuj")
-text = "[empty]"
-autowrap_mode = 2
-
-[node name="Button8" type="Button" parent="Window/screen2/ScrollContainer/GridContainer"]
-custom_minimum_size = Vector2(140, 140)
-layout_mode = 2
-theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
-theme_override_colors/font_color = Color(0, 0, 0, 1)
-theme_override_colors/font_focus_color = Color(0, 0, 0, 1)
-theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
-theme_override_styles/focus = SubResource("StyleBoxEmpty_hdpka")
-theme_override_styles/hover = ExtResource("3_r0xuj")
-theme_override_styles/pressed = ExtResource("4_hdpka")
-theme_override_styles/normal = ExtResource("3_r0xuj")
-text = "[empty]"
-autowrap_mode = 2
-
-[node name="Button9" type="Button" parent="Window/screen2/ScrollContainer/GridContainer"]
-custom_minimum_size = Vector2(140, 140)
-layout_mode = 2
-theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
-theme_override_colors/font_color = Color(0, 0, 0, 1)
-theme_override_colors/font_focus_color = Color(0, 0, 0, 1)
-theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
-theme_override_styles/focus = SubResource("StyleBoxEmpty_hdpka")
-theme_override_styles/hover = ExtResource("3_r0xuj")
-theme_override_styles/pressed = ExtResource("4_hdpka")
-theme_override_styles/normal = ExtResource("3_r0xuj")
-text = "[empty]"
-autowrap_mode = 2
-
-[node name="Button10" type="Button" parent="Window/screen2/ScrollContainer/GridContainer"]
-custom_minimum_size = Vector2(140, 140)
-layout_mode = 2
-theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
-theme_override_colors/font_color = Color(0, 0, 0, 1)
-theme_override_colors/font_focus_color = Color(0, 0, 0, 1)
-theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
-theme_override_styles/focus = SubResource("StyleBoxEmpty_hdpka")
-theme_override_styles/hover = ExtResource("3_r0xuj")
-theme_override_styles/pressed = ExtResource("4_hdpka")
-theme_override_styles/normal = ExtResource("3_r0xuj")
-text = "[empty]"
-autowrap_mode = 2
-
 [node name="spacer2" type="Control" parent="Window/screen2/ScrollContainer/GridContainer"]
-custom_minimum_size = Vector2(10, 0)
 layout_mode = 2
+
+[node name="car_button" type="Button" parent="Window/screen2/ScrollContainer/GridContainer"]
+custom_minimum_size = Vector2(140, 140)
+layout_mode = 2
+theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_focus_color = Color(0, 0, 0, 1)
+theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
+theme_override_styles/focus = SubResource("StyleBoxEmpty_hdpka")
+theme_override_styles/hover = ExtResource("3_r0xuj")
+theme_override_styles/pressed = ExtResource("4_hdpka")
+theme_override_styles/normal = ExtResource("3_r0xuj")
+text = "Car"
+autowrap_mode = 2
+
+[node name="controller_button" type="Button" parent="Window/screen2/ScrollContainer/GridContainer"]
+custom_minimum_size = Vector2(140, 140)
+layout_mode = 2
+theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_focus_color = Color(0, 0, 0, 1)
+theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
+theme_override_styles/focus = SubResource("StyleBoxEmpty_hdpka")
+theme_override_styles/hover = ExtResource("3_r0xuj")
+theme_override_styles/pressed = ExtResource("4_hdpka")
+theme_override_styles/normal = ExtResource("3_r0xuj")
+text = "Controller"
+autowrap_mode = 2
+
+[node name="cross_button" type="Button" parent="Window/screen2/ScrollContainer/GridContainer"]
+custom_minimum_size = Vector2(140, 140)
+layout_mode = 2
+theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_focus_color = Color(0, 0, 0, 1)
+theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
+theme_override_styles/focus = SubResource("StyleBoxEmpty_hdpka")
+theme_override_styles/hover = ExtResource("3_r0xuj")
+theme_override_styles/pressed = ExtResource("4_hdpka")
+theme_override_styles/normal = ExtResource("3_r0xuj")
+text = "Cross"
+autowrap_mode = 2
 
 [node name="spacer3" type="Control" parent="Window/screen2/ScrollContainer/GridContainer"]
-custom_minimum_size = Vector2(10, 0)
 layout_mode = 2
 
-[node name="Button11" type="Button" parent="Window/screen2/ScrollContainer/GridContainer"]
+[node name="katana_button" type="Button" parent="Window/screen2/ScrollContainer/GridContainer"]
 custom_minimum_size = Vector2(140, 140)
 layout_mode = 2
 theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
@@ -683,10 +625,10 @@ theme_override_styles/focus = SubResource("StyleBoxEmpty_hdpka")
 theme_override_styles/hover = ExtResource("3_r0xuj")
 theme_override_styles/pressed = ExtResource("4_hdpka")
 theme_override_styles/normal = ExtResource("3_r0xuj")
-text = "[empty]"
+text = "Katana"
 autowrap_mode = 2
 
-[node name="Button12" type="Button" parent="Window/screen2/ScrollContainer/GridContainer"]
+[node name="plane_button" type="Button" parent="Window/screen2/ScrollContainer/GridContainer"]
 custom_minimum_size = Vector2(140, 140)
 layout_mode = 2
 theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
@@ -697,10 +639,10 @@ theme_override_styles/focus = SubResource("StyleBoxEmpty_hdpka")
 theme_override_styles/hover = ExtResource("3_r0xuj")
 theme_override_styles/pressed = ExtResource("4_hdpka")
 theme_override_styles/normal = ExtResource("3_r0xuj")
-text = "[empty]"
+text = "Plane"
 autowrap_mode = 2
 
-[node name="Button13" type="Button" parent="Window/screen2/ScrollContainer/GridContainer"]
+[node name="usb_button" type="Button" parent="Window/screen2/ScrollContainer/GridContainer"]
 custom_minimum_size = Vector2(140, 140)
 layout_mode = 2
 theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
@@ -711,258 +653,28 @@ theme_override_styles/focus = SubResource("StyleBoxEmpty_hdpka")
 theme_override_styles/hover = ExtResource("3_r0xuj")
 theme_override_styles/pressed = ExtResource("4_hdpka")
 theme_override_styles/normal = ExtResource("3_r0xuj")
-text = "[empty]"
+text = "USB"
 autowrap_mode = 2
 
-[node name="Button14" type="Button" parent="Window/screen2/ScrollContainer/GridContainer"]
+[node name="clear_button" type="Button" parent="Window/screen2"]
 custom_minimum_size = Vector2(140, 140)
 layout_mode = 2
+offset_left = 120.0
+offset_top = 829.0
+offset_right = 600.0
+offset_bottom = 969.0
 theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_colors/font_focus_color = Color(0, 0, 0, 1)
 theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("6_rjf5p")
+theme_override_font_sizes/font_size = 22
 theme_override_styles/focus = SubResource("StyleBoxEmpty_hdpka")
 theme_override_styles/hover = ExtResource("3_r0xuj")
 theme_override_styles/pressed = ExtResource("4_hdpka")
 theme_override_styles/normal = ExtResource("3_r0xuj")
-text = "[empty]"
+text = "claer"
 autowrap_mode = 2
-
-[node name="Button15" type="Button" parent="Window/screen2/ScrollContainer/GridContainer"]
-custom_minimum_size = Vector2(140, 140)
-layout_mode = 2
-theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
-theme_override_colors/font_color = Color(0, 0, 0, 1)
-theme_override_colors/font_focus_color = Color(0, 0, 0, 1)
-theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
-theme_override_styles/focus = SubResource("StyleBoxEmpty_hdpka")
-theme_override_styles/hover = ExtResource("3_r0xuj")
-theme_override_styles/pressed = ExtResource("4_hdpka")
-theme_override_styles/normal = ExtResource("3_r0xuj")
-text = "[empty]"
-autowrap_mode = 2
-
-[node name="Button16" type="Button" parent="Window/screen2/ScrollContainer/GridContainer"]
-custom_minimum_size = Vector2(140, 140)
-layout_mode = 2
-theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
-theme_override_colors/font_color = Color(0, 0, 0, 1)
-theme_override_colors/font_focus_color = Color(0, 0, 0, 1)
-theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
-theme_override_styles/focus = SubResource("StyleBoxEmpty_hdpka")
-theme_override_styles/hover = ExtResource("3_r0xuj")
-theme_override_styles/pressed = ExtResource("4_hdpka")
-theme_override_styles/normal = ExtResource("3_r0xuj")
-text = "[empty]"
-autowrap_mode = 2
-
-[node name="Button17" type="Button" parent="Window/screen2/ScrollContainer/GridContainer"]
-custom_minimum_size = Vector2(140, 140)
-layout_mode = 2
-theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
-theme_override_colors/font_color = Color(0, 0, 0, 1)
-theme_override_colors/font_focus_color = Color(0, 0, 0, 1)
-theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
-theme_override_styles/focus = SubResource("StyleBoxEmpty_hdpka")
-theme_override_styles/hover = ExtResource("3_r0xuj")
-theme_override_styles/pressed = ExtResource("4_hdpka")
-theme_override_styles/normal = ExtResource("3_r0xuj")
-text = "[empty]"
-autowrap_mode = 2
-
-[node name="Button18" type="Button" parent="Window/screen2/ScrollContainer/GridContainer"]
-custom_minimum_size = Vector2(140, 140)
-layout_mode = 2
-theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
-theme_override_colors/font_color = Color(0, 0, 0, 1)
-theme_override_colors/font_focus_color = Color(0, 0, 0, 1)
-theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
-theme_override_styles/focus = SubResource("StyleBoxEmpty_hdpka")
-theme_override_styles/hover = ExtResource("3_r0xuj")
-theme_override_styles/pressed = ExtResource("4_hdpka")
-theme_override_styles/normal = ExtResource("3_r0xuj")
-text = "[empty]"
-autowrap_mode = 2
-
-[node name="Button19" type="Button" parent="Window/screen2/ScrollContainer/GridContainer"]
-custom_minimum_size = Vector2(140, 140)
-layout_mode = 2
-theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
-theme_override_colors/font_color = Color(0, 0, 0, 1)
-theme_override_colors/font_focus_color = Color(0, 0, 0, 1)
-theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
-theme_override_styles/focus = SubResource("StyleBoxEmpty_hdpka")
-theme_override_styles/hover = ExtResource("3_r0xuj")
-theme_override_styles/pressed = ExtResource("4_hdpka")
-theme_override_styles/normal = ExtResource("3_r0xuj")
-text = "[empty]"
-autowrap_mode = 2
-
-[node name="Button20" type="Button" parent="Window/screen2/ScrollContainer/GridContainer"]
-custom_minimum_size = Vector2(140, 140)
-layout_mode = 2
-theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
-theme_override_colors/font_color = Color(0, 0, 0, 1)
-theme_override_colors/font_focus_color = Color(0, 0, 0, 1)
-theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
-theme_override_styles/focus = SubResource("StyleBoxEmpty_hdpka")
-theme_override_styles/hover = ExtResource("3_r0xuj")
-theme_override_styles/pressed = ExtResource("4_hdpka")
-theme_override_styles/normal = ExtResource("3_r0xuj")
-text = "[empty]"
-autowrap_mode = 2
-
-[node name="spacer4" type="Control" parent="Window/screen2/ScrollContainer/GridContainer"]
-custom_minimum_size = Vector2(10, 0)
-layout_mode = 2
-
-[node name="spacer5" type="Control" parent="Window/screen2/ScrollContainer/GridContainer"]
-custom_minimum_size = Vector2(10, 0)
-layout_mode = 2
-
-[node name="Button21" type="Button" parent="Window/screen2/ScrollContainer/GridContainer"]
-custom_minimum_size = Vector2(140, 140)
-layout_mode = 2
-theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
-theme_override_colors/font_color = Color(0, 0, 0, 1)
-theme_override_colors/font_focus_color = Color(0, 0, 0, 1)
-theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
-theme_override_styles/focus = SubResource("StyleBoxEmpty_hdpka")
-theme_override_styles/hover = ExtResource("3_r0xuj")
-theme_override_styles/pressed = ExtResource("4_hdpka")
-theme_override_styles/normal = ExtResource("3_r0xuj")
-text = "[empty]"
-autowrap_mode = 2
-
-[node name="Button22" type="Button" parent="Window/screen2/ScrollContainer/GridContainer"]
-custom_minimum_size = Vector2(140, 140)
-layout_mode = 2
-theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
-theme_override_colors/font_color = Color(0, 0, 0, 1)
-theme_override_colors/font_focus_color = Color(0, 0, 0, 1)
-theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
-theme_override_styles/focus = SubResource("StyleBoxEmpty_hdpka")
-theme_override_styles/hover = ExtResource("3_r0xuj")
-theme_override_styles/pressed = ExtResource("4_hdpka")
-theme_override_styles/normal = ExtResource("3_r0xuj")
-text = "[empty]"
-autowrap_mode = 2
-
-[node name="Button23" type="Button" parent="Window/screen2/ScrollContainer/GridContainer"]
-custom_minimum_size = Vector2(140, 140)
-layout_mode = 2
-theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
-theme_override_colors/font_color = Color(0, 0, 0, 1)
-theme_override_colors/font_focus_color = Color(0, 0, 0, 1)
-theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
-theme_override_styles/focus = SubResource("StyleBoxEmpty_hdpka")
-theme_override_styles/hover = ExtResource("3_r0xuj")
-theme_override_styles/pressed = ExtResource("4_hdpka")
-theme_override_styles/normal = ExtResource("3_r0xuj")
-text = "[empty]"
-autowrap_mode = 2
-
-[node name="Button24" type="Button" parent="Window/screen2/ScrollContainer/GridContainer"]
-custom_minimum_size = Vector2(140, 140)
-layout_mode = 2
-theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
-theme_override_colors/font_color = Color(0, 0, 0, 1)
-theme_override_colors/font_focus_color = Color(0, 0, 0, 1)
-theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
-theme_override_styles/focus = SubResource("StyleBoxEmpty_hdpka")
-theme_override_styles/hover = ExtResource("3_r0xuj")
-theme_override_styles/pressed = ExtResource("4_hdpka")
-theme_override_styles/normal = ExtResource("3_r0xuj")
-text = "[empty]"
-autowrap_mode = 2
-
-[node name="Button25" type="Button" parent="Window/screen2/ScrollContainer/GridContainer"]
-custom_minimum_size = Vector2(140, 140)
-layout_mode = 2
-theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
-theme_override_colors/font_color = Color(0, 0, 0, 1)
-theme_override_colors/font_focus_color = Color(0, 0, 0, 1)
-theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
-theme_override_styles/focus = SubResource("StyleBoxEmpty_hdpka")
-theme_override_styles/hover = ExtResource("3_r0xuj")
-theme_override_styles/pressed = ExtResource("4_hdpka")
-theme_override_styles/normal = ExtResource("3_r0xuj")
-text = "[empty]"
-autowrap_mode = 2
-
-[node name="Button26" type="Button" parent="Window/screen2/ScrollContainer/GridContainer"]
-custom_minimum_size = Vector2(140, 140)
-layout_mode = 2
-theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
-theme_override_colors/font_color = Color(0, 0, 0, 1)
-theme_override_colors/font_focus_color = Color(0, 0, 0, 1)
-theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
-theme_override_styles/focus = SubResource("StyleBoxEmpty_hdpka")
-theme_override_styles/hover = ExtResource("3_r0xuj")
-theme_override_styles/pressed = ExtResource("4_hdpka")
-theme_override_styles/normal = ExtResource("3_r0xuj")
-text = "[empty]"
-autowrap_mode = 2
-
-[node name="Button27" type="Button" parent="Window/screen2/ScrollContainer/GridContainer"]
-custom_minimum_size = Vector2(140, 140)
-layout_mode = 2
-theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
-theme_override_colors/font_color = Color(0, 0, 0, 1)
-theme_override_colors/font_focus_color = Color(0, 0, 0, 1)
-theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
-theme_override_styles/focus = SubResource("StyleBoxEmpty_hdpka")
-theme_override_styles/hover = ExtResource("3_r0xuj")
-theme_override_styles/pressed = ExtResource("4_hdpka")
-theme_override_styles/normal = ExtResource("3_r0xuj")
-text = "[empty]"
-autowrap_mode = 2
-
-[node name="Button28" type="Button" parent="Window/screen2/ScrollContainer/GridContainer"]
-custom_minimum_size = Vector2(140, 140)
-layout_mode = 2
-theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
-theme_override_colors/font_color = Color(0, 0, 0, 1)
-theme_override_colors/font_focus_color = Color(0, 0, 0, 1)
-theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
-theme_override_styles/focus = SubResource("StyleBoxEmpty_hdpka")
-theme_override_styles/hover = ExtResource("3_r0xuj")
-theme_override_styles/pressed = ExtResource("4_hdpka")
-theme_override_styles/normal = ExtResource("3_r0xuj")
-text = "[empty]"
-autowrap_mode = 2
-
-[node name="Button29" type="Button" parent="Window/screen2/ScrollContainer/GridContainer"]
-custom_minimum_size = Vector2(140, 140)
-layout_mode = 2
-theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
-theme_override_colors/font_color = Color(0, 0, 0, 1)
-theme_override_colors/font_focus_color = Color(0, 0, 0, 1)
-theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
-theme_override_styles/focus = SubResource("StyleBoxEmpty_hdpka")
-theme_override_styles/hover = ExtResource("3_r0xuj")
-theme_override_styles/pressed = ExtResource("4_hdpka")
-theme_override_styles/normal = ExtResource("3_r0xuj")
-text = "[empty]"
-autowrap_mode = 2
-
-[node name="Button30" type="Button" parent="Window/screen2/ScrollContainer/GridContainer"]
-custom_minimum_size = Vector2(140, 140)
-layout_mode = 2
-theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
-theme_override_colors/font_color = Color(0, 0, 0, 1)
-theme_override_colors/font_focus_color = Color(0, 0, 0, 1)
-theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
-theme_override_styles/focus = SubResource("StyleBoxEmpty_hdpka")
-theme_override_styles/hover = ExtResource("3_r0xuj")
-theme_override_styles/pressed = ExtResource("4_hdpka")
-theme_override_styles/normal = ExtResource("3_r0xuj")
-text = "[empty]"
-autowrap_mode = 2
-
-[node name="spacer6" type="Control" parent="Window/screen2/ScrollContainer/GridContainer"]
-custom_minimum_size = Vector2(10, 0)
-layout_mode = 2
 
 [node name="RichTextLabel" type="RichTextLabel" parent="Window/screen2"]
 layout_mode = 1
@@ -1234,9 +946,15 @@ text = "COMMIT"
 [connection signal="pressed" from="Window/screen1/color_button/c16" to="." method="_on_c_16_pressed"]
 [connection signal="pressed" from="Window/screen1/color_button2" to="." method="_on_color_button_pressed"]
 [connection signal="pressed" from="Window/screen2/ScrollContainer/GridContainer/badminton_button" to="." method="_on_badminton_button_pressed"]
-[connection signal="pressed" from="Window/screen2/ScrollContainer/GridContainer/usb_button" to="." method="_on_usb_button_pressed"]
 [connection signal="pressed" from="Window/screen2/ScrollContainer/GridContainer/banana_button" to="." method="_on_banana_button_pressed"]
 [connection signal="pressed" from="Window/screen2/ScrollContainer/GridContainer/capsule_button" to="." method="_on_capsule_button_pressed"]
+[connection signal="pressed" from="Window/screen2/ScrollContainer/GridContainer/car_button" to="." method="_on_car_button_pressed"]
+[connection signal="pressed" from="Window/screen2/ScrollContainer/GridContainer/controller_button" to="." method="_on_controller_button_pressed"]
+[connection signal="pressed" from="Window/screen2/ScrollContainer/GridContainer/cross_button" to="." method="_on_cross_button_pressed"]
+[connection signal="pressed" from="Window/screen2/ScrollContainer/GridContainer/katana_button" to="." method="_on_katana_button_pressed"]
+[connection signal="pressed" from="Window/screen2/ScrollContainer/GridContainer/plane_button" to="." method="_on_plane_button_pressed"]
+[connection signal="pressed" from="Window/screen2/ScrollContainer/GridContainer/usb_button" to="." method="_on_usb_button_pressed"]
+[connection signal="pressed" from="Window/screen2/clear_button" to="." method="_on_clear_button_pressed"]
 [connection signal="pressed" from="Window/screen3/commit_button" to="." method="_on_commit_button_pressed"]
 [connection signal="toggled" from="Window/screen3/Button" to="." method="_on_button_toggled"]
 [connection signal="toggled" from="Window/screen3/Button2" to="." method="_on_button_2_toggled"]

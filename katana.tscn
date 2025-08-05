@@ -1,0 +1,8 @@
+[gd_scene load_steps=3 format=3 uid="uid://ckfsqnkiyys0d"]
+
+[ext_resource type="Material" uid="uid://botc4qyvs3v18" path="res://material.tres" id="1_8ih5n"]
+[ext_resource type="ArrayMesh" uid="uid://5b2e4xlde1k8" path="res://assets/katana.obj" id="1_okte2"]
+
+[node name="MeshInstance3D" type="MeshInstance3D"]
+material_override = ExtResource("1_8ih5n")
+mesh = ExtResource("1_okte2")

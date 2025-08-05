@@ -1,0 +1,9 @@
+[gd_scene load_steps=3 format=3 uid="uid://djxn7auoe8qgw"]
+
+[ext_resource type="Material" uid="uid://botc4qyvs3v18" path="res://material.tres" id="1_uoj53"]
+[ext_resource type="ArrayMesh" uid="uid://cvrjurtllnybt" path="res://assets/car.obj" id="2_k61xc"]
+
+[node name="MeshInstance3D" type="MeshInstance3D"]
+transform = Transform3D(0.303562, 0, 0, 0, 0.303562, 0, 0, 0, 0.303562, 0, 0, 0)
+material_override = ExtResource("1_uoj53")
+mesh = ExtResource("2_k61xc")

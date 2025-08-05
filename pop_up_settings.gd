@@ -433,3 +433,50 @@ func _on_line_edit_text_changed(_new_text: String) -> void:
 	else:
 		finish_button.disabled = false
 	
+	
+func _on_katana_button_pressed() -> void:
+	var cancel_event = InputEventAction.new()
+	cancel_event.action = "katana"
+	cancel_event.pressed = true
+	Input.parse_input_event(cancel_event)
+	_simulate_update()
+
+
+func _on_controller_button_pressed() -> void:
+	var cancel_event = InputEventAction.new()
+	cancel_event.action = "controller"
+	cancel_event.pressed = true
+	Input.parse_input_event(cancel_event)
+	_simulate_update()
+
+
+func _on_plane_button_pressed() -> void:
+	var cancel_event = InputEventAction.new()
+	cancel_event.action = "plane"
+	cancel_event.pressed = true
+	Input.parse_input_event(cancel_event)
+	_simulate_update()
+
+
+func _on_cross_button_pressed() -> void:
+	var cancel_event = InputEventAction.new()
+	cancel_event.action = "cross"
+	cancel_event.pressed = true
+	Input.parse_input_event(cancel_event)
+	_simulate_update()
+
+
+func _on_car_button_pressed() -> void:
+	var cancel_event = InputEventAction.new()
+	cancel_event.action = "car"
+	cancel_event.pressed = true
+	Input.parse_input_event(cancel_event)
+	_simulate_update()
+
+
+func _on_clear_button_pressed() -> void:
+	var cancel_event = InputEventAction.new()
+	cancel_event.action = "reset"
+	cancel_event.pressed = true
+	Input.parse_input_event(cancel_event)
+	_simulate_update()

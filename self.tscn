@@ -1,4 +1,4 @@
-[gd_scene load_steps=26 format=3 uid="uid://cq6ykboxrb5ee"]
+[gd_scene load_steps=31 format=3 uid="uid://cq6ykboxrb5ee"]
 
 [ext_resource type="Script" uid="uid://cf5umirvgyha2" path="res://self.gd" id="1_1w2h5"]
 [ext_resource type="Script" uid="uid://bns1eimouvfim" path="res://update.gd" id="1_l8ouh"]
@@ -8,6 +8,11 @@
 [ext_resource type="Script" uid="uid://8umksf8e80fw" path="res://addons/phantom_camera/scripts/resources/tween_resource.gd" id="3_n774l"]
 [ext_resource type="Script" uid="uid://b2wwms7ma0t8k" path="res://ban_mesh.gd" id="4_mciwl"]
 [ext_resource type="Script" uid="uid://d3b4hne752uhs" path="res://usb_mesh.gd" id="5_y1ba4"]
+[ext_resource type="Script" uid="uid://8jbtnii553jm" path="res://katana_mesh.gd" id="6_v68ed"]
+[ext_resource type="Script" uid="uid://ca50yfaopiw2d" path="res://controller_mesh.gd" id="7_jhpth"]
+[ext_resource type="Script" uid="uid://cosg8uir7frbj" path="res://plane_mesh.gd" id="8_ywxss"]
+[ext_resource type="Script" uid="uid://br8kq6hrks7i5" path="res://cross_mesh.gd" id="9_7nl00"]
+[ext_resource type="Script" uid="uid://du106hvb4hkl3" path="res://car_mesh.gd" id="10_ouhtr"]
 [ext_resource type="PackedScene" uid="uid://fftl0wsif3j6" path="res://pop_up_settings.tscn" id="11_4xtgn"]
 [ext_resource type="Script" uid="uid://d15nobs3uuxeb" path="res://addons/postfx/nodes/PostFX.gd" id="11_s6ge6"]
 [ext_resource type="Script" uid="uid://bvbw3ejkm2bck" path="res://addons/postfx/scripts/FXBase.gd" id="12_k0fcr"]
@@ -151,6 +156,21 @@ script = ExtResource("4_mciwl")
 
 [node name="usbMesh" type="Node3D" parent="meshes"]
 script = ExtResource("5_y1ba4")
+
+[node name="katanaMesh" type="Node3D" parent="meshes"]
+script = ExtResource("6_v68ed")
+
+[node name="controllerMesh" type="Node3D" parent="meshes"]
+script = ExtResource("7_jhpth")
+
+[node name="planeMesh" type="Node3D" parent="meshes"]
+script = ExtResource("8_ywxss")
+
+[node name="crossMesh" type="Node3D" parent="meshes"]
+script = ExtResource("9_7nl00")
+
+[node name="carMesh" type="Node3D" parent="meshes"]
+script = ExtResource("10_ouhtr")
 
 [node name="Camera3D" type="Camera3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 25)

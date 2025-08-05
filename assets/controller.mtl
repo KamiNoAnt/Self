@@ -1,0 +1,306 @@
+# Blender 4.5.0 MTL File: 'selfs.blend'
+# www.blender.org
+
+newmtl 02___Default
+Ns 250.000000
+Ka 1.000000 1.000000 1.000000
+Ks 0.500000 0.500000 0.500000
+Ke 0.000000 0.000000 0.000000
+Ni 1.500000
+d 1.000000
+illum 2
+map_Kd C:/Users/Deniz/Desktop/selfs/katana/textures/02___Default_baseColor.jpeg
+map_Bump -bm 1.000000 C:/Users/Deniz/Desktop/selfs/katana/textures/02___Default_normal.png
+
+newmtl 03___Default
+Ns 250.000000
+Ka 1.000000 1.000000 1.000000
+Ks 0.500000 0.500000 0.500000
+Ke 0.000000 0.000000 0.000000
+Ni 1.500000
+d 1.000000
+illum 2
+map_Kd C:/Users/Deniz/Desktop/selfs/katana/textures/03___Default_baseColor.jpeg
+map_Bump -bm 1.000000 C:/Users/Deniz/Desktop/selfs/katana/textures/03___Default_normal.png
+
+newmtl 04___Default
+Ns 250.000000
+Ka 1.000000 1.000000 1.000000
+Ks 0.500000 0.500000 0.500000
+Ke 0.000000 0.000000 0.000000
+Ni 1.500000
+d 1.000000
+illum 2
+map_Kd C:/Users/Deniz/Desktop/selfs/katana/textures/04___Default_baseColor.jpeg
+map_Bump -bm 1.000000 C:/Users/Deniz/Desktop/selfs/katana/textures/04___Default_normal.png
+
+newmtl 05___Default
+Ns 250.000000
+Ka 1.000000 1.000000 1.000000
+Ks 0.500000 0.500000 0.500000
+Ke 0.000000 0.000000 0.000000
+Ni 1.500000
+d 1.000000
+illum 2
+map_Kd C:/Users/Deniz/Desktop/selfs/katana/textures/05___Default_baseColor.jpeg
+map_Bump -bm 1.000000 C:/Users/Deniz/Desktop/selfs/katana/textures/05___Default_normal.png
+
+newmtl 06___Default
+Ns 250.000000
+Ka 1.000000 1.000000 1.000000
+Ks 0.500000 0.500000 0.500000
+Ke 0.000000 0.000000 0.000000
+Ni 1.500000
+d 1.000000
+illum 2
+map_Kd C:/Users/Deniz/Desktop/selfs/katana/textures/06___Default_baseColor.jpeg
+map_Bump -bm 1.000000 C:/Users/Deniz/Desktop/selfs/katana/textures/06___Default_normal.png
+
+newmtl 07___Default
+Ns 250.000000
+Ka 1.000000 1.000000 1.000000
+Ks 0.500000 0.500000 0.500000
+Ke 0.000000 0.000000 0.000000
+Ni 1.500000
+d 1.000000
+illum 2
+map_Kd C:/Users/Deniz/Desktop/selfs/katana/textures/07___Default_baseColor.jpeg
+map_Bump -bm 1.000000 C:/Users/Deniz/Desktop/selfs/katana/textures/07___Default_normal.png
+
+newmtl 09___Default
+Ns 250.000000
+Ka 1.000000 1.000000 1.000000
+Ks 0.500000 0.500000 0.500000
+Ke 0.000000 0.000000 0.000000
+Ni 1.500000
+d 1.000000
+illum 2
+map_Kd C:/Users/Deniz/Desktop/selfs/katana/textures/09___Default_baseColor.jpeg
+map_Bump -bm 1.000000 C:/Users/Deniz/Desktop/selfs/katana/textures/09___Default_normal.png
+
+newmtl 1001
+Ns 250.000000
+Ka 1.000000 1.000000 1.000000
+Ks 0.500000 0.500000 0.500000
+Ke 0.000000 0.000000 0.000000
+Ni 1.500000
+illum 2
+map_Kd C:/Users/Deniz/Desktop/selfs/ps5_controller/textures/1001_baseColor.png
+map_d C:/Users/Deniz/Desktop/selfs/ps5_controller/textures/1001_baseColor.png
+map_Bump -bm 1.000000 C:/Users/Deniz/Desktop/selfs/ps5_controller/textures/1001_normal.png
+
+newmtl 1001.002
+Ns 250.000000
+Ka 1.000000 1.000000 1.000000
+Ks 0.500000 0.500000 0.500000
+Ke 0.000000 0.000000 0.000000
+Ni 1.500000
+illum 2
+map_Kd C:/Users/Deniz/Desktop/selfs/ps5_controller/textures/1001_baseColor.png
+map_d C:/Users/Deniz/Desktop/selfs/ps5_controller/textures/1001_baseColor.png
+map_Bump -bm 1.000000 C:/Users/Deniz/Desktop/selfs/ps5_controller/textures/1001_normal.png
+
+newmtl 10___Default
+Ns 250.000000
+Ka 1.000000 1.000000 1.000000
+Ks 0.500000 0.500000 0.500000
+Ke 0.000000 0.000000 0.000000
+Ni 1.500000
+d 1.000000
+illum 2
+map_Kd C:/Users/Deniz/Desktop/selfs/katana/textures/10___Default_baseColor.jpeg
+map_Bump -bm 1.000000 C:/Users/Deniz/Desktop/selfs/katana/textures/10___Default_normal.png
+
+newmtl 11___Default
+Ns 250.000000
+Ka 1.000000 1.000000 1.000000
+Ks 0.500000 0.500000 0.500000
+Ke 0.000000 0.000000 0.000000
+Ni 1.500000
+d 1.000000
+illum 2
+map_Kd C:/Users/Deniz/Desktop/selfs/katana/textures/11___Default_baseColor.jpeg
+map_Bump -bm 1.000000 C:/Users/Deniz/Desktop/selfs/katana/textures/11___Default_normal.png
+
+newmtl Material
+Ns 707.735168
+Ka 1.000000 1.000000 1.000000
+Kd 0.063719 0.063719 0.063719
+Ks 0.500000 0.500000 0.500000
+Ke 0.000000 0.000000 0.000000
+Ni 1.500000
+d 1.000000
+illum 2
+
+newmtl Material.001
+Ns 877.046997
+Ka 1.000000 1.000000 1.000000
+Kd 0.006370 0.006370 0.006370
+Ks 0.500000 0.500000 0.500000
+Ke 0.000000 0.000000 0.000000
+Ni 1.500000
+d 1.000000
+illum 2
+
+newmtl Material.003
+Ns 617.346558
+Ka 0.309524 0.309524 0.309524
+Kd 0.002579 0.002579 0.002579
+Ks 0.500000 0.500000 0.500000
+Ke 0.000000 0.000000 0.000000
+Ni 1.500000
+d 1.000000
+illum 3
+
+newmtl Material.004
+Ns 776.076477
+Ka 0.119048 0.119048 0.119048
+Kd 0.002267 0.002392 0.027209
+Ks 0.500000 0.500000 0.500000
+Ke 0.000000 0.000000 0.000000
+Ni 1.500000
+d 1.000000
+illum 3
+
+newmtl Material.006
+Ns 833.018311
+Ka 1.000000 1.000000 1.000000
+Kd 0.009012 0.010970 0.037408
+Ks 0.500000 0.500000 0.500000
+Ke 0.000000 0.000000 0.000000
+Ni 1.500000
+d 1.000000
+illum 2
+
+newmtl Material.007
+Ns 776.076477
+Ka 0.119048 0.119048 0.119048
+Kd 0.527717 0.527717 0.527717
+Ks 0.500000 0.500000 0.500000
+Ke 0.000000 0.000000 0.000000
+Ni 1.500000
+d 1.000000
+illum 3
+
+newmtl Material.008
+Ns 250.000000
+Ka 1.000000 1.000000 1.000000
+Kd 0.000000 0.018907 0.800000
+Ks 0.500000 0.500000 0.500000
+Ke 0.023725 0.000000 1.000000
+Ni 1.500000
+d 1.000000
+illum 2
+
+newmtl Material.009
+Ns 455.089172
+Ka 1.000000 1.000000 1.000000
+Kd 0.800000 0.800000 0.800000
+Ks 0.500000 0.500000 0.500000
+Ke 0.000000 0.000000 0.000000
+Ni 1.500000
+d 1.000000
+illum 2
+
+newmtl Material.010
+Ns 250.000000
+Ka 1.000000 1.000000 1.000000
+Kd 0.014669 0.014669 0.014669
+Ks 0.500000 0.500000 0.500000
+Ke 0.015992 0.015992 0.015992
+Ni 1.500000
+d 1.000000
+illum 2
+
+newmtl Material.011
+Ns 250.000000
+Ka 1.000000 1.000000 1.000000
+Kd 0.638270 0.638270 0.638270
+Ks 0.500000 0.500000 0.500000
+Ke 0.000000 0.000000 0.000000
+Ni 1.500000
+d 1.000000
+illum 2
+
+newmtl VRayMtl33
+Ns 660.271606
+Ka 0.729907 0.729907 0.729907
+Kd 0.006584 0.007011 0.014139
+Ks 0.500000 0.500000 0.500000
+Ke 0.000000 0.000000 0.000000
+Ni 1.500000
+d 1.000000
+illum 3
+map_Bump -bm 1.000000 C:/Users/Deniz/Desktop/selfs/ps5_controller/textures/VRayMtl33_normal.png
+
+newmtl VRayMtl37
+Ns 316.591888
+Ka 1.000000 1.000000 1.000000
+Kd 0.000000 0.000000 0.000000
+Ks 0.500000 0.500000 0.500000
+Ke 0.000000 0.000000 0.000000
+Ni 1.500000
+d 1.000000
+illum 2
+map_Bump -bm 0.327620 C:/Users/Deniz/Desktop/selfs/ps5_controller/textures/VRayMtl37_normal.png
+
+newmtl VRayMtl55
+Ns 477.019470
+Ka 0.114286 0.114286 0.114286
+Kd 0.683172 0.683172 0.683172
+Ks 0.500000 0.500000 0.500000
+Ke 0.000000 0.000000 0.000000
+Ni 1.500000
+d 1.000000
+illum 3
+map_Bump -bm 0.321525 C:/Users/Deniz/Desktop/selfs/ps5_controller/textures/VRayMtl55_normal.png
+
+newmtl front_body
+Ns 494.455078
+Ka 0.133333 0.133333 0.133333
+Kd 0.890005 0.890005 0.890005
+Ks 0.500000 0.500000 0.500000
+Ke 0.000000 0.000000 0.000000
+Ni 1.500000
+d 1.000000
+illum 3
+
+newmtl front_body.001
+Ns 440.221558
+Ka 1.000000 1.000000 1.000000
+Kd 0.010021 0.010021 0.010021
+Ks 0.500000 0.500000 0.500000
+Ke 0.000000 0.000000 0.000000
+Ni 1.500000
+d 1.000000
+illum 2
+
+newmtl front_body.002
+Ns 440.221558
+Ka 0.133333 0.133333 0.133333
+Kd 0.044454 0.044454 0.044454
+Ks 0.500000 0.500000 0.500000
+Ke 0.000000 0.000000 0.000000
+Ni 1.500000
+d 1.000000
+illum 3
+
+newmtl material
+Ns 568.467773
+Ka 1.000000 1.000000 1.000000
+Ks 0.500000 0.500000 0.500000
+Ke 0.000000 0.000000 0.000000
+Ni 1.500000
+d 1.000000
+illum 2
+map_Kd C:/Users/Deniz/Desktop/selfs/ps5_controller/textures/material_baseColor.png
+
+newmtl material_0
+Ns 159.999985
+Ka 1.000000 1.000000 1.000000
+Kd 1.000000 1.000000 1.000000
+Ks 0.500000 0.500000 0.500000
+Ke 0.000000 0.000000 0.000000
+Ni 1.500000
+d 1.000000
+illum 2
